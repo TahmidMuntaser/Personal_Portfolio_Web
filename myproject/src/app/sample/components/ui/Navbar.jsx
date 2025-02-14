@@ -1,12 +1,34 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="flex items-center justify-between p-4 bg-gray-800 text-white shadow-md">
+    <nav
+      className={`flex items-center justify-between transition-all duration-300 p-8 ${
+        scrolled
+          ? 'fixed top-0 left-0 right-0 p-6 bg-gray-800 shadow-md animate-jump'
+          : 'relative p-6 bg-transparent'
+      }`}
+    >
       <div className="flex items-center">
         <span className="text-2xl font-bold tracking-wide text-blue-500">
-        Portfolio
+          Portfolio
         </span>
       </div>
       <div className="flex space-x-4 font-bold tracking-widest text-lg">
@@ -35,7 +57,9 @@ const Navbar = () => {
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
         </a>
       </div>
-      <Button variant="contained" color="primary">Hire Me</Button>
+      <Button variant="contained" color="primary">
+        Hire Me
+      </Button>
     </nav>
   );
 };
