@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-// import Button from '@mui/material/Button';
 import CustomButton from './Button';
 
 const Navbar = () => {
@@ -23,12 +22,12 @@ const Navbar = () => {
     <nav
       className={`flex items-center justify-between transition-all duration-300 p-6 ${
         scrolled
-          ? 'fixed top-0 left-0 right-0 p-6 bg-gray-800 shadow-md animate-jump'
+          ? 'fixed top-0 left-0 right-0 p-6 bg-[#0a192f] shadow-md animate-jump'
           : 'relative p-6 bg-transparent'
       }`}
     >
       <div className="flex items-center">
-        <span className="text-2xl font-bold tracking-wide text-blue-500">
+        <span className="text-2xl font-bold tracking-wide text-blue-400">
           Portfolio
         </span>
       </div>
