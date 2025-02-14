@@ -21,9 +21,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`flex items-center justify-between transition-all duration-300 p-8 ${
+      className={`flex items-center justify-between transition-all duration-300 p-6 ${
         scrolled
-          ? 'fixed top-0 left-0 right-0 p-6 bg-gray-800 shadow-md transform'
+          ? 'fixed top-0 left-0 right-0 p-6 bg-gray-800 shadow-md animate-jump'
           : 'relative p-6 bg-transparent'
       }`}
     >
