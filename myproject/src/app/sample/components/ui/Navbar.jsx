@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
+import CustomButton from './Button';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,7 +23,7 @@ const Navbar = () => {
     <nav
       className={`flex items-center justify-between transition-all duration-300 p-8 ${
         scrolled
-          ? 'fixed top-0 left-0 right-0 p-6 bg-gray-800 shadow-md animate-jump'
+          ? 'fixed top-0 left-0 right-0 p-6 bg-gray-800 shadow-md transform'
           : 'relative p-6 bg-transparent'
       }`}
     >
@@ -57,9 +58,9 @@ const Navbar = () => {
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
         </a>
       </div>
-      <Button variant="contained" color="primary">
+      <CustomButton>
         Hire Me
-      </Button>
+      </CustomButton>
     </nav>
   );
 };
