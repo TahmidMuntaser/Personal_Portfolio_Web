@@ -27,14 +27,13 @@ const Hero = () => {
     >
       {/* Left Section */}
       <div className="max-w-2xl bg-black/60 p-10 rounded-lg">
-        <h2 className="text-5xl font-semibold mt-4">
-          
+        
+        <h2 className="text-5xl font-mono font-semibold mt-4">
           <div className="pt-2">
             <AnimatedText text="Hi," showCursor={false} />
           </div>
-          
           <div className="pt-2">
-            <AnimatedText text="I am Tahmid" initialDelay={1} />
+            <AnimatedText text="I'm Tahmid" initialDelay={1} />
           </div>
         </h2>
 
