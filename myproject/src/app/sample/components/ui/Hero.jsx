@@ -1,6 +1,6 @@
 import React from 'react';
 import CustomButton from './Button';
-import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter, FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const AnimatedText = ({ text, showCursor = true, initialDelay = 0, letterDelay = 0.1 }) => {
   return (
@@ -28,36 +28,62 @@ const Hero = () => {
       {/* Left Section */}
       <div className="max-w-2xl bg-black/60 p-10 rounded-lg">
         
-        <h2 className="text-5xl font-mono font-semibold mt-4">
-          <div className="pt-2">
-            <AnimatedText text="Hi," showCursor={false} />
-          </div>
-          <div className="pt-2">
-            <AnimatedText text="I'm Tahmid" initialDelay={1} />
-          </div>
-        </h2>
+          <h2 className="text-5xl font-mono font-semibold mt-4">
+            <div className="pt-2">
+              <AnimatedText text="Hi," showCursor={false} />
+            </div>
+            <div className="pt-2">
+              <AnimatedText text="I'm Tahmid" initialDelay={1} />
+            </div>
+          </h2>
 
-        <h1 className="text-6xl font-bold mt-4 pt-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
-          Next-Level Web 
-        </h1>
-        <h1 className="text-6xl font-bold mt-2 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
-          Developer.
-        </h1>
-        <p className="text-xl mt-4 pb-3 text-white/90">
-          I am a passionate developer who loves building beautiful and functional web 
-          applications. Explore my work and get in touch!
-        </p>
+          <h1 className="text-6xl font-bold mt-4 pt-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
+            Next-Level Web 
+          </h1>
+          <h1 className="text-6xl font-bold mt-2 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
+            Developer.
+          </h1>
+          <p className="text-xl mt-4 pb-3 text-white/90">
+            I am a passionate developer who loves building beautiful and functional web 
+            applications. Explore my work and get in touch!
+          </p>
 
-        <div className="mt-6 flex items-center space-x-4">
-          <button className="px-6 py-3 bg-purple-800 rounded-full font-semibold hover:bg-purple-700 transition">
-            Download CV
-          </button>
-          {/* Social Icons */}
-          <FaTwitter className="text-2xl cursor-pointer hover:text-gray-400" />
-          <FaGithub className="text-2xl cursor-pointer hover:text-gray-400" />
-          <FaLinkedin className="text-2xl cursor-pointer hover:text-gray-400" />
+          
+          <div className="mt-6 flex items-center space-x-6">
+            
+            {/* Download CV Button */}
+            <button className="px-6 py-3 bg-transparent text-white font-semibold rounded-full border border-purple-800 shadow-lg hover:bg-purple-800 hover:border-transparent hover:shadow-xl transition duration-300">
+              Download CV
+            </button>
+
+            {/* Social Icons */}
+            <div className="flex space-x-3">
+              
+              {/* Twitter */}
+              <div className="p-3 bg-transparent border border-purple-800 rounded-full 
+                  hover:bg-black hover:border-transparent hover:scale-110 
+                  hover: transition-all duration-300 ease-in-out cursor-pointer">
+                <FaXTwitter className="text-2xl text-white" />
+              </div>
+              {/* GitHub */}
+              <div className="p-3 bg-transparent border border-purple-800 rounded-full 
+                              hover:bg-gray-700 hover:border-transparent hover:scale-110 
+                              hover: transition-all duration-300 ease-in-out cursor-pointer">
+                <FaGithub className="text-2xl text-white" />
+              </div>
+
+              {/* LinkedIn */}
+              <div className="p-3 bg-transparent border border-purple-800 rounded-full 
+                              hover:bg-blue-700 hover:border-transparent hover:scale-110 
+                              hover: transition-all duration-300 ease-in-out cursor-pointer">
+                <FaLinkedin className="text-2xl text-white" />
+              </div>
+            </div>
         </div>
+
+
       </div>
+
 
       {/* Right Section - Profile Image */}
       <div className="mt-10 md:mt-0">
