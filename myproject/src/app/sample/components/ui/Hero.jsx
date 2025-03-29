@@ -23,14 +23,19 @@ const AnimatedText = ({ text, showCursor = true, initialDelay = 0, letterDelay =
 const Hero = () => {
   return (
     <section
-      className="flex flex-col md:flex-row items-center justify-between min-h-screen px-10 bg-gradient-to-r from-[#4a148c] via-[#4a148c] to-[#0d47a1] text-white"
+      className="flex flex-col md:flex-row items-center justify-between min-h-screen px-14 bg-gradient-to-r from-[#4a148c] via-[#4a148c] to-[#0d47a1] text-white"
     >
       {/* Left Section */}
-      <div className="max-w-2xl bg-black/60 p-6 rounded-lg">
+      <div className="max-w-2xl bg-black/60 p-10 rounded-lg">
         <h2 className="text-5xl font-semibold mt-4">
-          <AnimatedText text="Hi," showCursor={false} />
-          <br />
-          <AnimatedText text="I am Tahmid" initialDelay={1} />
+          
+          <div className="pt-2">
+            <AnimatedText text="Hi," showCursor={false} />
+          </div>
+          
+          <div className="pt-2">
+            <AnimatedText text="I am Tahmid" initialDelay={1} />
+          </div>
         </h2>
 
         <h1 className="text-6xl font-bold mt-4 pt-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
