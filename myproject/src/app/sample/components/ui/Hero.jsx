@@ -51,12 +51,12 @@ const Hero = () => {
           
           <div className="mt-6 flex items-center space-x-6">
             
-            {/* Download CV Button */}
-            <button className="px-6 py-3 bg-transparent text-white font-semibold rounded-full border border-purple-800 shadow-lg hover:bg-purple-800 hover:border-transparent hover:shadow-xl transition duration-300">
-              Download CV
-            </button>
+          <button className="relative px-6 py-3 font-semibold text-white border border-purple-800 rounded-full overflow-hidden group transition duration-300">
+            <span className="absolute inset-0 bg-purple-800 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
+            <span className="relative z-10">Download CV</span>
+          </button>
 
-            {/* Social Icons */}
+          {/* Social Icons */}
             <div className="flex space-x-3">
               
               {/* Twitter */}
