@@ -42,3 +42,29 @@ body {
 .animate-jump {
   animation: jump 0.5s ease-out;
 }
+
+@keyframes typewriter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-letter {
+  animation: typewriter 0.5s steps(1) forwards;
+}
+
+
+.terminal-cursor::after {
+  content: "|";
+  margin-left: 2px;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

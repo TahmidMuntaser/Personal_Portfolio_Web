@@ -2,6 +2,24 @@ import React from 'react';
 import CustomButton from './Button';
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 
+const AnimatedText = ({ text, showCursor = true, initialDelay = 0, letterDelay = 0.1 }) => {
+  return (
+    <span>
+      {text.split("").map((char, index) => (
+        <span
+          key={index}
+          style={{ animationDelay: `${initialDelay + index * letterDelay}s` }}
+          className={`inline-block opacity-0 animate-letter ${
+            char === " " ? "px-[0.2px]" : ""
+          } ${index === text.length - 1 && showCursor ? "terminal-cursor" : ""}`}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </span>
+  );
+};
+
 const Hero = () => {
   return (
     <section
@@ -9,13 +27,16 @@ const Hero = () => {
     >
       {/* Left Section */}
       <div className="max-w-2xl bg-black/60 p-6 rounded-lg">
-        
-        <h2 className="text-4xl font-semibold">I am Tahmid</h2>
+        <h2 className="text-5xl font-semibold mt-4">
+          <AnimatedText text="Hi," showCursor={false} />
+          <br />
+          <AnimatedText text="I am Tahmid" initialDelay={1} />
+        </h2>
 
-        <h1 className="text-6xl font-bold mt-4 pt-4 bg-clip-text text-transparent bg-gradient-to-r  from-purple-600  to-purple-300">
+        <h1 className="text-6xl font-bold mt-4 pt-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
           Next-Level Web 
         </h1>
-        <h1 className="text-6xl font-bold mt-2 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600  to-purple-300">
+        <h1 className="text-6xl font-bold mt-2 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
           Developer.
         </h1>
         <p className="text-xl mt-4 pb-3 text-white/90">
@@ -42,7 +63,6 @@ const Hero = () => {
           className="w-[350px] h-[400px] rounded-2xl object-cover border-4 border-purple-800"
         />
       </div>
-      
     </section>
   );
 };
