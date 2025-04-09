@@ -9,9 +9,21 @@ const HomePage = () => {
     <div>
       <Navbar />
       <Hero />
-      <Services />
-     
-      
+      <Services
+        services={[
+          {
+            id: 1,
+            title: 'Web Development',
+            description: 'Building responsive and functional websites using modern technologies.'
+          },
+
+          
+
+
+
+        ]}
+      />
+
     </div>
   );
 };
