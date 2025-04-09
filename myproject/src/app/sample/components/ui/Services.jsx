@@ -11,17 +11,17 @@ const Services = ({ services }) => {
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className="bg-gray-1000 p-6 rounded-lg shadow-md hover:shadow-lg transition"
+                            className="bg-gray-1000 hover:bg-purple-800  p-6 rounded-lg shadow-md hover:shadow-lg transition"
                         >
                             <div className="grid grid-cols-2 items-center">
                                 {/* Left Part: ID and Title */}
                                 <div className="flex items-center space-x-2">
-                                    <span className="bg-purple-800 text-white text-lg font-bold rounded-full w-10 h-10 flex items-center justify-center">
+                                    <span className="bg-purple-800 text-white text-xl font-bold rounded-full w-10 h-10 flex items-center justify-center">
                                         {service.id}
                                     </span>
-                                    <h3 className="text-3xl font-bold">{service.title}</h3>
+                                    <h3 className="text-4xl font-bold">{service.title}</h3>
                                 </div>
-                                
+
                                 {/* Right Part: Description */}
                                 <div className="text-right">
                                     <p className="text-xl text-gray-300">
