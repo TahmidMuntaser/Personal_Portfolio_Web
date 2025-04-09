@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`flex items-center justify-between transition-all duration-300 p-6 ${
+      className={`z-50 flex items-center justify-between transition-all duration-300 p-6 ${
         scrolled
           ? 'fixed top-0 left-0 right-0 p-6 bg-[#0a192f] shadow-md animate-jump'
           : 'relative p-6 bg-transparent'
