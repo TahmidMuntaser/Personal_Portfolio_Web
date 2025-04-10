@@ -6,7 +6,11 @@ const Services = ({ services }) => {
     return (
         <section className="py-10 bg-gray-1000">
             <div className="container mx-auto px-4">
-                <h2 className="text-5xl font-bold text-center mb-8">My Services</h2>
+                <h2 className="text-center text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-800 to-purple-300">My Services</h2>
+                <p className="text-center text-gray-300 max-w-prose mx-auto mb-8">
+                    A quick overview of what I can do for you. I focus on delivering 
+                    high-quality, efficient solutions tailored to each project’s needs.
+                </p>
                 <div className="grid grid-cols-1 gap-6">
                     {services.map((service) => (
                         <div
