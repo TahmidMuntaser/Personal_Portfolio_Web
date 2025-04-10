@@ -9,13 +9,13 @@ const Services = ({ services }) => {
                 <h2 className="text-center text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-800 to-purple-300">My Services</h2>
                 <p className="text-center text-gray-300 max-w-prose mx-auto mb-8">
                     A quick overview of what I can do for you. I focus on delivering 
-                    high-quality, efficient solutions tailored to each project’s needs.
+                    high-quality, efficient solutions tailored to each project's needs.
                 </p>
                 <div className="grid grid-cols-1 gap-6">
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className="bg-gray-1000 hover:bg-purple-800 p-6 rounded-lg shadow-md hover:shadow-lg transition"
+                            className="bg-gray-1000 hover:bg-purple-800 p-10 rounded-lg shadow-md hover:shadow-lg transition min-h-12"
                         >
                             <div className="grid grid-cols-2 items-center">
                                 {/* Left Part: ID and Title */}
@@ -28,7 +28,7 @@ const Services = ({ services }) => {
 
                                 {/* Right Part: Description */}
                                 <div className="text-right">
-                                    <p className="text-xl text-gray-300">
+                                    <p className="text-lg text-gray-300">
                                         {service.description}
                                     </p>
                                 </div>
