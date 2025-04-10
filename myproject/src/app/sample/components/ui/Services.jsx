@@ -11,11 +11,11 @@ const Services = ({ services }) => {
                     A quick overview of what I can do for you. I focus on delivering 
                     high-quality, efficient solutions tailored to each project's needs.
                 </p>
-                <div className="grid grid-cols-1 gap-6">
+                <div className="grid grid-cols-1 gap-0">
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className="bg-gray-1000 hover:bg-purple-800 p-10 rounded-lg shadow-md hover:shadow-lg transition min-h-12"
+                            className="bg-gray-1000 hover:bg-purple-800 p-8 rounded-lg shadow-md hover:shadow-lg transition min-h-4 border-b-[1px] border-purple-800"
                         >
                             <div className="grid grid-cols-2 items-center">
                                 {/* Left Part: ID and Title */}
