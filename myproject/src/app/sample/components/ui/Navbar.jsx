@@ -23,7 +23,7 @@ const Navbar = () => {
       className={`z-50 flex items-center justify-between transition-all duration-300 p-6 ${
         scrolled
           ? 'fixed top-0 left-0 right-0 p-6 bg-[#0c0c0c] shadow-md animate-jump'
-          : 'relative p-6 bg-gradient-to-r from-[#52148c] via-[#1a0a2e] to-[#350c57]'
+          : 'relative p-6 bg-gradient-to-r from-[#221636] via-[#1a0a2e] to-[#350c57]'
       }`}
     >
       <div className="flex items-center">
