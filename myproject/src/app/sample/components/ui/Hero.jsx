@@ -23,7 +23,7 @@ const AnimatedText = ({ text, showCursor = true, initialDelay = 0, letterDelay =
 const Hero = () => {
   return (
     <section
-      className="flex flex-col md:flex-row items-center justify-between min-h-screen px-14 bg-gradient-to-r from-[#4a148c] via-[#4a148c] to-[#0d47a1] text-white"
+      className="flex flex-col md:flex-row items-center justify-between min-h-screen px-14 bg-gradient-to-r from-[#52148c] via-[#1a0a2e] to-[#350c57] text-white"
     >
       {/* Left Section */}
       <div className="max-w-2xl bg-black/60 p-10 rounded-lg">
