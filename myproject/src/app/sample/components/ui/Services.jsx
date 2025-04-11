@@ -4,7 +4,7 @@ import React from 'react';
 
 const Services = ({ services }) => {
     return (
-        <section id='services' className="py-10 scroll-mt-44">
+        <section id='services' className="py-20 scroll-mt-44">
             <div className="container mx-auto px-4">
                 <h2 className="text-center text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-800 to-purple-300">
                     My Services
