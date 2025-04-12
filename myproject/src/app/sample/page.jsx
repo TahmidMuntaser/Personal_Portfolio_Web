@@ -3,6 +3,7 @@ import Navbar from './components/ui/Navbar';
 import CustomButton from './components/ui/Button';
 import Hero from './components/ui/Hero';
 import Services from './components/ui/Services'
+import Contact from './components/ui/Contact'
 
 const HomePage = () => {
   return (
@@ -34,12 +35,11 @@ const HomePage = () => {
             title: "Programming Solutions",
             description: "Solve complex problems, create efficient algorithms, and build custom applications using Python, Java, or C/C++."
           }
-          
-
-
-
+  
         ]}
       />
+
+      <Contact />
 
     </div>
   );
