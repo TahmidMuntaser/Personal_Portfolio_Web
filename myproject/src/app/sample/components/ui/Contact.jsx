@@ -1,4 +1,5 @@
 import React from "react";  
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
     return(
@@ -25,6 +26,37 @@ const Contact = () => {
                 </div>
 
                 {/* details */}
+                <div>
+                    <div>
+                        <div>
+                            <FaPhoneAlt/>
+                        </div>
+                        <div>
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <FaEnvelope/>
+                        </div>
+                        <div>
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <FaMapMarkerAlt/>
+                        </div>
+                        <div>
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
                 
             
             </div>
