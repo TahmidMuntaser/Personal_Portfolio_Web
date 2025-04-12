@@ -3,7 +3,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
     return(
-        <section className="min-h-screen px-5 py-16 md:px-20 text-white">
+        <section id="contact" className="min-h-screen px-5 py-16 md:px-20 text-white scroll-mt-40">
             <div className="flex flex-col md:flex-row justify-between items-start gap-10">
                 {/* info */}
                 <div className="bg-gradient-to-b from-purple-900/45 to-purple-900/20 pl-10 pr-10 pt-16 pb-20 rounded-2xl flex-1">
