@@ -9,14 +9,14 @@ const Contact = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-4">Let's work together!</h2>
                     <p className="text-gray-400 mb-8">I make clean and simple designs that bring your ideas to life!</p>
                     <form className="flex flex-col gap-4">
-                        <div>
-                            <input type="text" />
-                            <input type="text" />
+                        <div className="flex flex-col md:flex-row gap-4">
+                            <input type="text" placeholder="First Name" className="bg-gray-950 p-3 rounded-lg w-full focus:outline-none" />
+                            <input type="text" placeholder="Last Name" className="bg-gray-950 p-3 rounded-lg w-full focus:outline-none" />
                         </div>
 
-                        <div>
-                            <input type="text" />
-                            <input type="text" />
+                        <div className="flex flex-col md:flex-row gap-4">
+                            <input type="email" placeholder="Email" className="bg-gray-950 p-3 rounded-lg w-full focus:outline-none" />
+                            <input type="text" placeholder="Phone Number" className="bg-gray-950 p-3 rounded-lg w-full focus:outline-none" />
                         </div>
 
                         <textarea name="" id=""></textarea>
