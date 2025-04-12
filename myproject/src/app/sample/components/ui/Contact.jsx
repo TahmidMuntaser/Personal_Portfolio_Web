@@ -3,10 +3,10 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
     return(
-        <section className="bg-black min-h-screen px-5 py-16 md:px-20 text-white">
+        <section className="min-h-screen px-5 py-16 md:px-20 text-white">
             <div className="flex flex-col md:flex-row justify-between items-start gap-10">
                 {/* info */}
-                <div className="bg-gradient-to-b from-purple-900/45 to-purple-900/20 p-10 rounded-2xl flex-1">
+                <div className="bg-gradient-to-b from-purple-900/45 to-purple-900/20 pl-10 pr-10 pt-16 pb-20 rounded-2xl flex-1">
                     <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-4">Let's work together!</h2>
                     <p className="text-gray-400 mb-8">I make clean and simple designs that bring your ideas to life!</p>
                     <form className="flex flex-col gap-4">
@@ -26,34 +26,35 @@ const Contact = () => {
                 </div>
 
                 {/* details */}
-                <div>
-                    <div>
-                        <div>
-                            <FaPhoneAlt/>
+                <div className="flex flex-col gap-8 flex-1 mt-36 ml-20">
+                    <div className="flex items-center gap-4">
+                        <div className="bg-purple-800 p-4 rounded-full">
+                            <FaPhoneAlt className="text-xl"/>
                         </div>
                         <div>
-                            <h4></h4>
-                            <p></p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <FaEnvelope/>
-                        </div>
-                        <div>
-                            <h4></h4>
-                            <p></p>
+                            <h4 className="text-sm">Phone</h4>
+                            <p className="text-gray-400 text-xl font-mono">0123456789</p>
                         </div>
                     </div>
 
-                    <div>
-                        <div>
-                            <FaMapMarkerAlt/>
+                    <div className="flex items-center gap-4">
+                        <div className="bg-purple-800 p-4 rounded-full">
+                            <FaEnvelope className="text-xl"/>
                         </div>
                         <div>
-                            <h4></h4>
-                            <p></p>
+                            <h4 className="text-sm">Email</h4>
+                            <p className="text-gray-400 text-xl font-mono">afsd12@gamil.com</p>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                        <div className="bg-purple-800 p-4 rounded-full">
+                            <FaMapMarkerAlt className="text-xl"/>
+                        </div>
+                        <div>
+                            <h4 className="text-sm">Address</h4>
+                            <p className="text-gray-400 text-xl font-mono">124/A, 4/5, <br />
+                            Dhaka, Bangladesh</p>
                         </div>
                     </div>
                 </div>
