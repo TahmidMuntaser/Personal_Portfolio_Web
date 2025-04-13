@@ -4,6 +4,7 @@ import CustomButton from './components/ui/Button';
 import Hero from './components/ui/Hero';
 import Services from './components/ui/Services'
 import Contact from './components/ui/Contact'
+import Footer from './components/ui/Footer'
 
 const HomePage = () => {
   return (
@@ -40,6 +41,7 @@ const HomePage = () => {
       />
 
       <Contact />
+      <Footer />
 
     </div>
   );
