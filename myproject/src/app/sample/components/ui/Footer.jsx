@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaGithub } from 'react-icons/fa6';
 
 const Footer = () => {
     return(
@@ -6,11 +7,11 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                 <p>© {new Date().getFullYear()} All rights reserved by Tahmid</p>
 
-                <div>
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
+                <div className="flex gap-6">
+                    <a href="#" ><FaFacebookF size={20} /></a>
+                    <a href="#"> <FaXTwitter size={20} /> </a>
+                    <a href="#"><FaLinkedinIn size={20} /></a>
+                    <a href="#"><FaGithub size={20} /></a>
                 </div>
             </div>
         </footer>
