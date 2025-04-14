@@ -5,6 +5,7 @@ import Hero from './components/ui/Hero';
 import Services from './components/ui/Services'
 import Contact from './components/ui/Contact'
 import Footer from './components/ui/Footer'
+import Skills from './components/ui/Skills'
 
 const HomePage = () => {
   return (
@@ -39,7 +40,7 @@ const HomePage = () => {
   
         ]}
       />
-
+      <Skills />
       <Contact />
       <Footer />
 
