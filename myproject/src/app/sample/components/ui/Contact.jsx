@@ -8,7 +8,7 @@ const Contact = () => {
                 {/* info */}
                 <div className="bg-gradient-to-b from-purple-900/45 to-purple-900/20 pl-10 pr-10 pt-16 pb-20 rounded-2xl flex-1">
                     <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-4">Let's work together!</h2>
-                    <p className="text-gray-400 mb-8">I make clean and simple designs that bring your ideas to life!</p>
+                    <p className="text-gray-300 mb-8">I make clean and simple designs that bring your ideas to life!</p>
                     <form className="flex flex-col gap-4">
                         <div className="flex flex-col md:flex-row gap-4">
                             <input type="text" placeholder="First Name" className="bg-gray-950 p-3 rounded-lg w-full focus:outline-none" />

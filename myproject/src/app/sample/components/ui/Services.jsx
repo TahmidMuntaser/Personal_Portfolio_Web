@@ -6,7 +6,7 @@ const Services = ({ services }) => {
     return (
         <section id='services' className="py-20 scroll-mt-40">
             <div className="container mx-auto px-4">
-                <h2 className="text-center text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-800 to-purple-300">
+                <h2 className="text-center text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-950 to-purple-100">
                     My Services
                 </h2>
                 <p className="text-center text-gray-300 max-w-prose mx-auto mb-8">
