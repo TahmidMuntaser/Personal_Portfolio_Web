@@ -48,10 +48,10 @@ const Navbar = () => {
           Skills
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
         </a>
-        <a href="#testimonials" className="relative group">
+        {/* <a href="#testimonials" className="relative group">
           Testimonials
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
-        </a>
+        </a> */}
         <a href="#contact" className="relative group">
           Contact
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
