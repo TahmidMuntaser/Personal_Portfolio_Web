@@ -6,6 +6,8 @@ import Services from './components/ui/Services'
 import Contact from './components/ui/Contact'
 import Footer from './components/ui/Footer'
 import Skills from './components/ui/Skills'
+import { FaReact, FaJava } from 'react-icons/fa';
+import { SiJavascript, SiDjango, SiCplusplus } from 'react-icons/si';
 
 const HomePage = () => {
   return (
@@ -40,7 +42,11 @@ const HomePage = () => {
   
         ]}
       />
-      <Skills />
+      <Skills 
+          skills={[
+            { name: 'React', icon: <FaReact size={50} /> },
+          ]}
+      />
       <Contact />
       <Footer />
 
