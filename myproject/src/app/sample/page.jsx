@@ -45,6 +45,10 @@ const HomePage = () => {
       <Skills 
           skills={[
             { name: 'React', icon: <FaReact size={50} /> },
+            { name: 'JavaScript', icon: <SiJavascript size={50} /> },
+            { name: 'Django', icon: <SiDjango size={50} /> },
+            { name: 'Java', icon: <FaJava size={50} /> },
+            { name: 'C++', icon: <SiCplusplus size={50} /> },
           ]}
       />
       <Contact />
