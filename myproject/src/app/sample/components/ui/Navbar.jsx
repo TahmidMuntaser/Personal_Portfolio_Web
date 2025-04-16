@@ -57,11 +57,9 @@ const Navbar = () => {
           <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
         </a>
       </div>
-      <a href="#contact">
-        <CustomButton className="focus:outline-none active:outline-none">
-          Hire Me
-        </CustomButton>
-      </a>
+      <CustomButton href="#contact">
+        Hire Me
+      </CustomButton>
      
     </nav>
   );
