@@ -11,6 +11,12 @@ import { FaReact, FaJava } from 'react-icons/fa';
 import { SiJavascript, SiDjango, SiCplusplus } from 'react-icons/si';
 
 const HomePage = () => {
+
+  const projectsData = [
+    
+  ];
+
+
   return (
     <div>
       <Navbar />
@@ -43,7 +49,7 @@ const HomePage = () => {
   
         ]}
       />
-      <Works />
+      <Works projects={projectsData} />
       <Skills 
           skills={[
             { name: 'React', icon: <FaReact size={50} /> },
