@@ -83,15 +83,32 @@ const Hero = () => {
 
       </div>
 
-
-      {/* Right Section - Profile Image */}
-      <div className="mt-10 md:mt-0">
-        <img
-          src="/profile.jpg"
-          alt="Tahmid"
-          className="w-[350px] h-[400px] rounded-2xl object-cover border-4 border-purple-800"
-        />
+      {/* Right Section */}
+      <div className="mt-10 md:mt-0 relative group">
+      
+        <div 
+          className="absolute -inset-1 rounded-2xl blur-lg opacity-50 group-hover:opacity-70 transition-opacity duration-1000"
+          style={{
+            background: 'linear-gradient(-45deg, #311b92, #4a148c, #283593, #0d47a1)',
+            backgroundSize: '400% 400%',
+            animation: 'gradientShift 4s ease infinite'
+          }}
+        ></div>
+        
+        <div className="relative">
+          <img
+            src="/profile2.png"
+            alt="Tahmid"
+            className="w-[350px] h-[400px] rounded-2xl object-cover border-4 border-purple-800 transition-transform duration-500 group-hover:scale-105 z-10 relative"
+          />
+          
+          <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-purple-400 rounded-tl-lg z-20"></div>
+          <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-purple-400 rounded-tr-lg z-20"></div>
+          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-purple-400 rounded-bl-lg z-20"></div>
+          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-purple-400 rounded-br-lg z-20"></div>
+        </div>
       </div>
+
     </section>
   );
 };
