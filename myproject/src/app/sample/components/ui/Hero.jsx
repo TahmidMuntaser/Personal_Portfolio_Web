@@ -37,7 +37,7 @@ const Hero = () => {
           </h2>
 
           <h1 className="text-6xl font-bold mt-4 pt-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
-            Passionate Web 
+            Innovative Web 
           </h1>
           <h1 className="text-6xl font-bold mt-2 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
             Developer.
@@ -59,24 +59,42 @@ const Hero = () => {
             <div className="flex space-x-3">
               
               {/* Twitter */}
-              <div className="p-3 bg-transparent border border-purple-800 rounded-full 
-                  hover:bg-black hover:border-transparent hover:scale-110 
-                  hover: transition-all duration-300 ease-in-out cursor-pointer">
-                <FaXTwitter className="text-2xl text-white" />
-              </div>
+              <a 
+                href="https://x.com/Tahmid_Muntaser" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <div className="p-3 bg-transparent border border-purple-800 rounded-full 
+                            hover:bg-black hover:border-transparent hover:scale-110 
+                            hover:transition-all duration-300 ease-in-out cursor-pointer">
+                  <FaXTwitter className="text-2xl text-white" />
+                </div>
+              </a>
               {/* GitHub */}
-              <div className="p-3 bg-transparent border border-purple-800 rounded-full 
+              <a 
+                href="https://github.com/TahmidMuntaser" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <div className="p-3 bg-transparent border border-purple-800 rounded-full 
                               hover:bg-gray-700 hover:border-transparent hover:scale-110 
-                              hover: transition-all duration-300 ease-in-out cursor-pointer">
-                <FaGithub className="text-2xl text-white" />
-              </div>
+                              hover:transition-all duration-300 ease-in-out cursor-pointer">
+                  <FaGithub className="text-2xl text-white" />
+                </div>
+              </a>
 
               {/* LinkedIn */}
-              <div className="p-3 bg-transparent border border-purple-800 rounded-full 
+              <a 
+                href="https://www.linkedin.com/in/tahmid-muntaser-518929230/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <div className="p-3 bg-transparent border border-purple-800 rounded-full 
                               hover:bg-blue-700 hover:border-transparent hover:scale-110 
-                              hover: transition-all duration-300 ease-in-out cursor-pointer">
-                <FaLinkedin className="text-2xl text-white" />
-              </div>
+                              hover:transition-all duration-300 ease-in-out cursor-pointer">
+                  <FaLinkedin className="text-2xl text-white" />
+                </div>
+              </a>
             </div>
         </div>
 
