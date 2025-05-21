@@ -37,7 +37,7 @@ const Hero = () => {
           </h2>
 
           <h1 className="text-6xl font-bold mt-4 pt-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
-            Next-Level Web 
+            Passionate Web 
           </h1>
           <h1 className="text-6xl font-bold mt-2 pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-300">
             Developer.
