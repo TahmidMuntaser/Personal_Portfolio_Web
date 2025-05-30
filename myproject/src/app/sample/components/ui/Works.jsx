@@ -8,7 +8,7 @@ const Works = ({projects}) => {
                 <p className="text-gray-300">We turn your ideas and dreams into a unique online experience that captivates you and your audience.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project) =>(
                     <WorkCard key={project.id} {...project} />)
                 )}

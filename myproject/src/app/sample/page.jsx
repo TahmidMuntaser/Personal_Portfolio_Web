@@ -22,6 +22,26 @@ const HomePage = () => {
         github: 'https://github.com/youdr-repo',
         tags: ['React', 'Next.js', 'Tailwind CSS']
     },
+
+    {
+        id: 2,
+        title: 'Title of Project 1',
+        description: 'Project was about precision and information',
+        imageUrl: '/profile.jpeg',
+        link: 'https://your-project-lidnk.com',
+        github: 'https://github.com/youdr-repo',
+        tags: ['React', 'Next.js', 'Tailwind CSS']
+    },
+
+    {
+        id: 3,
+        title: 'Title of Project 1',
+        description: 'Project was about precision and information',
+        imageUrl: '/profile.jpeg',
+        link: 'https://your-project-lidnk.com',
+        github: 'https://github.com/youdr-repo',
+        tags: ['React', 'Django', 'Tailwind CSS']
+    },
   ];
 
 
