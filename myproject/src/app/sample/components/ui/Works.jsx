@@ -1,5 +1,5 @@
 import React from 'react';
-
+import WorkCard from './WorkCard';
 const Works = ({projects}) => {
     return(
         <section id='works' className='text-white py-16 px-4 md:px-16 bg-gradient-to-b from-purple-900/45 to-purple-900/20'>
@@ -8,7 +8,7 @@ const Works = ({projects}) => {
                 <p className="text-gray-300">We turn your ideas and dreams into a unique online experience that captivates you and your audience.</p>
             </div>
 
-            <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {projects.map((project) =>(
                     <WorkCard key={project.id} {...project} />)
                 )}
