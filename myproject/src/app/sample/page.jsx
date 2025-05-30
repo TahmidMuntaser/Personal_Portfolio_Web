@@ -13,7 +13,12 @@ import { SiJavascript, SiDjango, SiCplusplus } from 'react-icons/si';
 const HomePage = () => {
 
   const projectsData = [
-    
+    {id: 1,
+      title: 'Title of Project 1',
+      description: 'Project was about precision and information',
+      imageUrl: '/profile.jpeg', 
+      link: '',
+    },
   ];
 
 
