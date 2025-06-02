@@ -1,9 +1,11 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { FaExternalLinkAlt, FaGithub, FaTimes, FaCheck, FaStar } from 'react-icons/fa';
 
 const ProjectDetail = ({ project, isOpen, onClose }) => {
+    const [selectedImage, setSelectedImage] = useState(null);
+
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
@@ -20,7 +22,11 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
     useEffect(() => {
         const handleEscape = (e) => {
             if (e.key === 'Escape') {
-                onClose();
+                if (selectedImage) {
+                    setSelectedImage(null);
+                } else {
+                    onClose();
+                }
             }
         };
 
@@ -31,7 +37,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
         return () => {
             document.removeEventListener('keydown', handleEscape);
         };
-    }, [isOpen, onClose]);
+    }, [isOpen, onClose, selectedImage]);
 
     if (!isOpen || !project) return null;
 
@@ -55,6 +61,14 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
         if (e.target === e.currentTarget) {
             onClose();
         }
+    };
+
+    const openImageModal = (image, index) => {
+        setSelectedImage({ src: image, index });
+    };
+
+    const closeImageModal = () => {
+        setSelectedImage(null);
     };
 
     return (
@@ -216,6 +230,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                                     className={`relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer border border-gray-600/30 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 ${
                                                         index === 0 ? 'md:col-span-2 h-80' : 'h-64'
                                                     }`}
+                                                    onClick={() => openImageModal(image, index)}
                                                 >
                                                     <Image
                                                         src={image}
@@ -343,6 +358,65 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                     </div>
                 </div>
             </div>
+
+            {/* Image Modal */}
+            {selectedImage && (
+                <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] flex items-center justify-center p-4" onClick={closeImageModal}>
+                    <div className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+                        {/* Close Button */}
+                        <button
+                            onClick={closeImageModal}
+                            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors duration-200 p-3 hover:bg-black/50 rounded-full z-10"
+                            title="Close (ESC)"
+                        >
+                            <FaTimes className="w-6 h-6" />
+                        </button>
+
+                        {/* Image Navigation */}
+                        {selectedImage.index > 0 && (
+                            <button
+                                onClick={() => openImageModal(project.gallery[selectedImage.index - 1], selectedImage.index - 1)}
+                                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-200 p-3 hover:bg-black/50 rounded-full z-10"
+                                title="Previous image"
+                            >
+                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                        )}
+
+                        {selectedImage.index < project.gallery.length - 1 && (
+                            <button
+                                onClick={() => openImageModal(project.gallery[selectedImage.index + 1], selectedImage.index + 1)}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-200 p-3 hover:bg-black/50 rounded-full z-10"
+                                title="Next image"
+                            >
+                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        )}
+
+                        {/* Full Size Image */}
+                        <div className="relative w-full h-full flex items-center justify-center">
+                            <Image
+                                src={selectedImage.src}
+                                alt={`${project.title} screenshot ${selectedImage.index + 1}`}
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
+
+                        {/* Image Info */}
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/20">
+                            <span className="text-sm font-medium">
+                                {selectedImage.index + 1} of {project.gallery.length} - Screenshot {selectedImage.index + 1}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Custom Scrollbar */}
             <style jsx>{`
