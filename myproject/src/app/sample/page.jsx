@@ -33,7 +33,8 @@ const projectsData = [
           gallery: [
               '/profile.jpeg',
               '/profile.jpeg',
-              '/profile.jpeg' 
+              '/profile.jpeg',
+              
           ]
       },
       {
@@ -53,9 +54,7 @@ const projectsData = [
               'Mobile responsive design'
           ],
           gallery: [
-              '/images/project2-1.jpg',
-              '/images/project2-2.jpg',
-              '/images/project2-3.jpg'
+             
           ]
       },
        {
