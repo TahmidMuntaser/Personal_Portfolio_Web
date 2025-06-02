@@ -2,7 +2,7 @@ import React from "react";
 import Image from 'next/image';
 import { FaExternalLinkAlt, FaGithub, FaEye } from 'react-icons/fa';
 
-const WorkCard = ({id, title, description, imageUrl, link, github, tags }) => {
+const WorkCard = ({id, title, description, fullDescription, imageUrl, link, github, tags, features, gallery, onProjectClick }) => {
     
     const getTagColor = (tag) => {
         const colors = {
@@ -18,6 +18,20 @@ const WorkCard = ({id, title, description, imageUrl, link, github, tags }) => {
             'Firebase': 'bg-orange-600/20 text-orange-300'
         };
         return colors[tag] || 'bg-purple-600/20 text-purple-300'; 
+    };
+
+    // Create complete project object with ALL properties
+    const project = { 
+        id, 
+        title, 
+        description, 
+        fullDescription, 
+        imageUrl, 
+        link, 
+        github, 
+        tags, 
+        features, 
+        gallery 
     };
 
     return(
@@ -63,7 +77,7 @@ const WorkCard = ({id, title, description, imageUrl, link, github, tags }) => {
             </div>
 
             {/* Content Section */}
-            <div className="p-5 bg-gradient-to-r from-purple-900/80 to-purple-900/20 min-h-[15px]">
+            <div className="p-5 bg-gradient-to-b from-purple-900/45 to-purple-900/20 min-h-[200px]">
                 <div className="flex flex-col h-full">
                     <div className="flex-1">
                         <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300 line-clamp-2">
@@ -73,7 +87,7 @@ const WorkCard = ({id, title, description, imageUrl, link, github, tags }) => {
                             {description}
                         </p>
                         
-                        {/* Dynamic Technology tags */} 
+                        {/* Dynamic Technology tags */}
                         {tags && tags.length > 0 && (
                             <div className="flex flex-wrap gap-2 mb-4">
                                 {tags.slice(0, 3).map((tag, index) => (
@@ -95,17 +109,16 @@ const WorkCard = ({id, title, description, imageUrl, link, github, tags }) => {
                     
                     {/* External link icon - Bottom right */}
                     <div className="flex justify-end">
-                        {link && (
-                            <a
-                                href={link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
-                                title="Open Project"
-                            >
-                                <FaExternalLinkAlt className="w-4 h-4" />
-                            </a>
-                        )}
+                        <button
+                            onClick={() => {
+                                console.log('Clicking with project:', project);
+                                onProjectClick && onProjectClick(project);
+                            }}
+                            className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
+                            title="View Project Details"
+                        >
+                            <FaExternalLinkAlt className="w-4 h-4" />
+                        </button>
                     </div>
                 </div>
             </div>

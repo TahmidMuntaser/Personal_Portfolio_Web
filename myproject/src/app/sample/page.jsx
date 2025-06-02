@@ -12,38 +12,75 @@ import { SiJavascript, SiDjango, SiCplusplus } from 'react-icons/si';
 
 const HomePage = () => {
 
-  const projectsData = [
-    {
-        id: 1,
-        title: 'Title of Project 1',
-        description: 'Project was about precision and information',
-        imageUrl: '/profile.jpeg',
-        link: 'https://your-project-lidnk.com',
-        github: 'https://github.com/youdr-repo',
-        tags: ['React', 'Next.js', 'Tailwind CSS']
-    },
-
-    {
-        id: 2,
-        title: 'Title of Project 1',
-        description: 'Project was about precision and information',
-        imageUrl: '/profile.jpeg',
-        link: 'https://your-project-lidnk.com',
-        github: 'https://github.com/youdr-repo',
-        tags: ['React', 'Next.js', 'Tailwind CSS']
-    },
-
-    {
-        id: 3,
-        title: 'Title of Project 1',
-        description: 'Project was about precision and information',
-        imageUrl: '/profile.jpeg',
-        link: 'https://your-project-lidnk.com',
-        github: 'https://github.com/youdr-repo',
-        tags: ['React', 'Django', 'Tailwind CSS']
-    },
-  ];
-
+  // Update your projectsData in page.jsx
+const projectsData = [
+      {
+          id: 1,
+          title: 'E-Commerce Platform',
+          description: 'Modern e-commerce platform with advanced features',
+          fullDescription: 'A comprehensive e-commerce solution built with React and Node.js, featuring user authentication, payment processing, inventory management, and real-time notifications. The platform includes both customer-facing storefront and admin dashboard.',
+          imageUrl: '/profile.jpeg',
+          link: 'https://',
+          github: 'https://github.com/',
+          tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+          features: [
+              'User authentication and authorization',
+              'Secure payment processing with Stripe',
+              'Real-time inventory management',
+              'Admin dashboard with analytics',
+              'Responsive design for all devices'
+          ],
+          gallery: [
+              '/profile.jpeg',
+              '/profile.jpeg',
+              '/profile.jpeg' 
+          ]
+      },
+      {
+          id: 2,
+          title: 'Task Management App',
+          description: 'Modern task management platform with collaboration features',
+          fullDescription: 'A comprehensive task management solution built with Next.js and Firebase, featuring real-time collaboration, project organization, and team productivity tracking.',
+          imageUrl: '/profile.jpeg',
+          link: 'https://',
+          github: 'https://github.com/',
+          tags: ['Next.js', 'Firebase', 'TypeScript', 'Tailwind CSS'],
+          features: [
+              'Real-time collaboration',
+              'Project organization',
+              'Team productivity tracking',
+              'File sharing and comments',
+              'Mobile responsive design'
+          ],
+          gallery: [
+              '/images/project2-1.jpg',
+              '/images/project2-2.jpg',
+              '/images/project2-3.jpg'
+          ]
+      },
+       {
+          id: 3,
+          title: 'Task Management App',
+          description: 'Modern task management platform with collaboration features',
+          fullDescription: 'A comprehensive task management solution built with Next.js and Firebase, featuring real-time collaboration, project organization, and team productivity tracking.',
+          imageUrl: '/profile.jpeg',
+          link: 'https://',
+          github: 'https://github.com/',
+          tags: ['Next.js', 'Firebase', 'TypeScript', 'Tailwind CSS'],
+          features: [
+              'Real-time collaboration',
+              'Project organization',
+              'Team productivity tracking',
+              'File sharing and comments',
+              'Mobile responsive design'
+          ],
+          gallery: [
+              '/images/project2-1.jpg',
+              '/images/project2-2.jpg',
+              '/images/project2-3.jpg'
+          ]
+      }
+];
 
   return (
     <div>
