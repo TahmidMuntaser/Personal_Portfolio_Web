@@ -33,7 +33,7 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
         features, 
         gallery 
     };
-
+    
     return(
         <div className="relative bg-gray-900 rounded-xl overflow-hidden group shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:-translate-y-2 w-full max-w-sm mx-auto">
             
