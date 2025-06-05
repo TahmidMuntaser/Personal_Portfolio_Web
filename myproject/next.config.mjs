@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
-export default nextConfig;
+// next.config.mjs (ESM)
+export default {
+  onDemandEntries: {
+    maxInactiveAge: 1000 * 60 * 60,
+    pagesBufferLength: 2,
+  },
+};
+
+
+
+

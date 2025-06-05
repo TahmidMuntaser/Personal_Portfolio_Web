@@ -325,7 +325,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                         </div>
 
                                         {/* Gallery Footer */}
-                                        <div className="mt-8 pt-6 border-t border-gray-700/50">
+                                        <div className="mt-8 pt-6 pb-6 border-t border-gray-700/50">
                                             <div className="flex items-center justify-center">
                                                 <div className="flex items-center space-x-4 text-gray-400 text-sm">
                                                     <div className="flex items-center space-x-2">
