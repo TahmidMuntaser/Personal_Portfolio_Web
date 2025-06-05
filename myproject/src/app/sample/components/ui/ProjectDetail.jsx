@@ -79,24 +79,61 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
             <div className="bg-gray-900 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-gray-700/50">
                 
                 {/* Header */}
-                <div className="bg-gradient-to-b from-purple-900/45 to-purple-900/20 p-8 border-b border-gray-700">
-                    <div className="flex items-start justify-between">
+                <div className="relative bg-gradient-to-br from-purple-900/60 via-purp-900/40 to-indigo-900/50 p-8 border-b border-gray-700/50">
+                    {/* Animated Background Pattern */}
+                    <div className="absolute inset-0 opacity-20">
+                        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-500/30 to-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+                        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-blue-500/25 to-purple-500/25 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                    </div>
+                    
+                    {/* Decorative Grid Pattern */}
+                    <div className="absolute inset-0 opacity-10" style={{
+                        backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+                        backgroundSize: '40px 40px'
+                    }}></div>
+                
+                    <div className="relative z-10 flex items-start justify-between">
                         <div className="flex-1 pr-16">
-                            <h1 className="text-4xl font-bold text-white mb-3 leading-tight">
-                                {project.title}
+                            {/* Project Category Badge */}
+                            <div className="mb-4">
+                                <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-purple-300 border border-purple-400/30 backdrop-blur-sm">
+                                    <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                    Featured Project
+                                </span>
+                            </div>
+                
+                            {/* Project Title with Gradient Text */}
+                            <h1 className="text-2xl lg:text-4xl font-black mb-4 leading-tight">
+                                <span className="bg-gradient-to-r from-white via-purple-100 to-blue-100 bg-clip-text text-transparent">
+                                    {project.title}
+                                </span>
                             </h1>
-                            <p className="text-purple-200 text-xl leading-relaxed">
+                
+                            {/* Project Description */}
+                            <p className="text-purple-100/90 text-lg lg:text-xl leading-relaxed font-light max-w-3xl">
                                 {project.description}
                             </p>
+                 
                         </div>
-                        <button
-                            onClick={onClose}
-                            className="text-gray-400 hover:text-white transition-all duration-200 p-3 hover:bg-gray-800 rounded-full hover:scale-110"
-                            title="Close (ESC)"
-                        >
-                            <FaTimes className="w-6 h-6" />
-                        </button>
+                
+                        {/* Enhanced Close Button */}
+                        <div className="flex flex-col items-end space-y-4">
+                            <button
+                                onClick={onClose}
+                                className="group relative text-gray-400 hover:text-white transition-all duration-300 p-4 hover:bg-white/10 rounded-2xl hover:scale-110 backdrop-blur-sm border border-gray-600/30 hover:border-purple-400/50"
+                                title="Close (ESC)"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-blue-500/0 group-hover:from-purple-500/20 group-hover:to-blue-500/20 rounded-2xl transition-all duration-300"></div>
+                                <FaTimes className="w-6 h-6 relative z-10 group-hover:rotate-90 transition-transform duration-300" />
+                            </button>
+                
+                        </div>
                     </div>
+                
+                    {/* Bottom Accent Line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-500 opacity-60"></div>
                 </div>
 
                 {/* Content */}
