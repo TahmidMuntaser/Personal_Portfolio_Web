@@ -137,7 +137,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                 </div>
 
                 {/* Content */}
-                <div className="overflow-y-auto max-h-[calc(90vh-140px)] bg-gray-900 custom-scrollbar">
+                <div className="overflow-y-auto max-h-[calc(90vh-140px)] bg-[#001] custom-scrollbar">
                     <div className="p-8 space-y-8">
                         
                         {/* Main Image */}
@@ -146,7 +146,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                 src={project.imageUrl}
                                 alt={project.title}
                                 fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                className="object-contain transition-transform duration-500 group-hover:scale-105"
                                 priority
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -171,7 +171,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
 
                                 {/* Enhanced Features */}
                                 {project.features && (
-                                    <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 relative overflow-hidden">
+                                    <div className="bg-[#001] backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 relative overflow-hidden">
                                         {/* Animated background gradient */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 animate-pulse"></div>
                                         
@@ -243,7 +243,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                 
                                 {/* Enhanced Gallery */}
                                 {project.gallery && project.gallery.length > 0 && (
-                                    <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
+                                    <div className="bg-[#001] backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
                                         <div className="flex items-center justify-between mb-8">
                                             <div className="flex items-center">
                                                 <div className="w-1 h-8 bg-purple-500 rounded-full mr-4"></div>
@@ -347,7 +347,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                 
                                 {/* Technologies */}
                                 {project.tags && (
-                                    <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+                                    <div className="bg-[#001] backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
                                         <h3 className="text-xl font-bold text-white mb-6">Technologies Used</h3>
                                         <div className="flex flex-wrap gap-3">
                                             {project.tags.map((tag, index) => (
@@ -363,7 +363,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                 )}
 
                                 {/* Enhanced Links */}
-                                <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+                                <div className="bg-[#001] backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
                                     <h3 className="text-xl font-bold text-white mb-6">Project Links</h3>
                                     <div className="space-y-4">
                                         {project.link && (
@@ -398,7 +398,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
 
             {/* Image Modal */}
             {selectedImage && (
-                <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] flex items-center justify-center p-4" onClick={closeImageModal}>
+                <div className="fixed inset-0 bg-black/90  backdrop-blur-sm z-[60] flex items-center justify-center p-4" onClick={closeImageModal}>
                     <div className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
                         {/* Close Button */}
                         <button
