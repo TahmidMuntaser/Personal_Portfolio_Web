@@ -76,7 +76,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={handleBackdropClick}
         >
-            <div className="bg-gray-900 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-gray-700/50">
+            <div className="bg-gray-900 mb-8 pb-8 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-gray-700/50">
                 
                 {/* Header */}
                 <div className="relative bg-gradient-to-br from-purple-900/60 via-purp-900/40 to-indigo-900/50 p-8 border-b border-gray-700/50">
