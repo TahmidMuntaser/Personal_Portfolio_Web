@@ -19,9 +19,30 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when clicking on a link
-  const handleLinkClick = () => {
+  // Reset mobile menu state on page load/refresh
+  useEffect(() => {
     setMobileMenuOpen(false);
+  }, []);
+
+  // Close mobile menu when clicking on a link
+  const handleLinkClick = (e) => {
+    setMobileMenuOpen(false);
+    
+    // Smooth scroll  
+    const href = e.currentTarget.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const navbarHeight = 80; 
+        const elementPosition = targetElement.offsetTop - navbarHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
   };
 
   // Prevent body scroll when mobile menu is open
@@ -39,9 +60,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`z-50 flex items-center justify-between transition-all duration-300 p-6 ${
+        className={`z-50 flex items-center justify-between transition-all duration-300 p-3 ${
           scrolled
-            ? 'fixed top-0 left-0 right-0 p-6 bg-[#0c0c0c] shadow-md animate-jump'
+            ? 'fixed top-0 left-0 right-0 p-6  bg-gradient-to-r from-[#221636] via-[#1a0a2e] to-[#350c57] shadow-md animate-jump'
             : 'relative p-6 bg-gradient-to-r from-[#221636] via-[#1a0a2e] to-[#350c57]'
         }`}
       >
@@ -53,23 +74,23 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4 font-bold tracking-widest text-lg">
-          <a href="#services" className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#services" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
             Services
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#works" className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#works" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
             Works
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#resume" className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#resume" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
             Resume
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#skills" className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#skills" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
             Skills
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#contact" className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#contact" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
             Contact
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
