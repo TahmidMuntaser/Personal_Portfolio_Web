@@ -104,7 +104,7 @@ const Navbar = () => {
         
         {/* Sidebar */}
         <div className={`absolute top-0 right-0 h-full w-80 bg-gradient-to-b from-[#221636] via-[#1a0a2e] to-[#350c57] transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="flex flex-col h-full p-8 pt-20">
+          <div className="flex flex-col h-full p-8 pt-28">
             {/* Mobile Navigation Links */}
             <div className="flex flex-col space-y-8 text-center">
               <a 
