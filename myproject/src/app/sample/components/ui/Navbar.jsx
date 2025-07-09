@@ -67,8 +67,11 @@ const Navbar = () => {
         }`}
       >
         <div className="flex items-center">
-          <span className="text-2xl font-bold tracking-wide text-blue-400">
-            Portfolio
+          <span 
+            className="text-2xl font-bold tracking-widest text-white cursor-pointer hover:text-purple-300 transition-colors duration-300"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            TAHMID
           </span>
         </div>
 

@@ -29,10 +29,10 @@ const Hero = () => {
         
           <h2 className="text-center md:text-left text-3xl md:text-5xl font-mono font-semibold mt-2 mb-6">
             <div className="pt-2">
-              <AnimatedText text="Hi," showCursor={false} />
+              <AnimatedText text="Hi, I'm" showCursor={false} />
             </div>
             <div className="pt-2">
-              <AnimatedText text="I'm Tahmid" initialDelay={1} />
+              <AnimatedText text="Tahmid Muntaser" initialDelay={1} />
             </div>
           </h2>
 
