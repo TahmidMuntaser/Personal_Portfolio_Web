@@ -4,36 +4,49 @@ import React from 'react';
 
 const Services = ({ services }) => {
     return (
-        <section id='services' className="py-12 md:py-20 scroll-mt-40">
-            <div className="container mx-auto px-4 md:px-6">
-                <h2 className="text-center text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-950 to-purple-100">
-                    My Services
-                </h2>
-                <p className="text-center text-gray-300 max-w-prose mx-auto mb-8 text-sm md:text-base px-4">
-                    A quick overview of what I can do for you. I focus on delivering 
-                    high-quality, efficient solutions tailored to each project's needs.
-                </p>
-                <div className="grid grid-cols-1 gap-4">
-                    {services.map((service) => (
+        <section id='services' className="py-16 md:py-24 px-4 md:px-8 lg:px-20 scroll-mt-40 bg-gradient-to-b from-transparent via-purple-950/5 to-transparent">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-16 md:mb-20">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 bg-clip-text" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                        What I Offer
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-purple-400 mx-auto mb-6 rounded-full"></div>
+                    <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+                        Crafting digital experiences with precision and passion. 
+                        Here's how I can help bring your vision to life.
+                    </p>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                    {services.map((service, index) => (
                         <div
                             key={service.id}
-                            className="bg-gray-1000 hover:bg-purple-800 p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:scale-[1.02] md:hover:scale-[1.01] overflow-hidden border border-purple-700/30 hover:border-purple-500/50"
+                            className="group relative bg-gradient-to-br from-gray-900 to-gray-950 p-8 md:p-10 rounded-3xl shadow-xl hover:shadow-purple-500/25 transition-all duration-500 ease-out transform hover:-translate-y-2 border border-gray-800 hover:border-purple-500/60 overflow-hidden"
+                            style={{ animationDelay: `${index * 100}ms` }}
                         >
-                            <div className="grid grid-cols-1 items-start h-full gap-3 md:gap-4">
-                                {/* Unified layout for all screen sizes */}
-                                <div className="flex items-center space-x-4 justify-start">
-                                    <span className="bg-purple-800 text-white text-lg md:text-xl font-bold rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center flex-shrink-0">
-                                        {service.id}
-                                    </span>
-                                    <h3 className="text-xl md:text-3xl font-bold text-left text-white">{service.title}</h3>
+                            {/* Animated background gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            
+                            {/* Content */}
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-5 mb-6">
+                                    <div className="relative">
+                                        <div className="absolute inset-0 bg-purple-600 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+                                        <span className="relative bg-gradient-to-br from-purple-500 to-purple-700 text-white text-xl md:text-2xl font-bold rounded-2xl w-16 h-16 md:w-18 md:h-18 flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                            {service.id}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
+                                        {service.title}
+                                    </h3>
                                 </div>
+                                
+                                <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                                    {service.description}
+                                </p>
 
-                                {/* Description below title */}
-                                <div className="text-left pl-16 md:pl-[4.5rem]">
-                                    <p className="text-sm md:text-lg text-gray-300 leading-relaxed">
-                                        {service.description}
-                                    </p>
-                                </div>
+                                {/* Decorative corner element */}
+                                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-purple-600/10 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             </div>
                         </div>
                     ))}

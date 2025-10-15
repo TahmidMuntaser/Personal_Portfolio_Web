@@ -15,7 +15,11 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
             'Python': 'bg-yellow-500/20 text-yellow-400',
             'Django': 'bg-green-700/20 text-green-400',
             'MongoDB': 'bg-green-500/20 text-green-300',
-            'Firebase': 'bg-orange-600/20 text-orange-300'
+            'Firebase': 'bg-orange-600/20 text-orange-300',
+            'Vite': 'bg-purple-600/20 text-purple-300',
+            'SQLite3': 'bg-blue-700/20 text-blue-400',
+            'Html': 'bg-orange-500/20 text-orange-300',
+            'CSS': 'bg-blue-400/20 text-blue-300'
         };
         return colors[tag] || 'bg-purple-600/20 text-purple-300'; 
     };
@@ -35,7 +39,10 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
     };
     
     return(
-        <div className="relative bg-gray-900 rounded-xl overflow-hidden group shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:-translate-y-2 w-full max-w-sm mx-auto">
+        <div 
+            onClick={() => onProjectClick && onProjectClick(project)}
+            className="relative bg-gray-900 rounded-xl overflow-hidden group shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:-translate-y-2 w-full cursor-pointer"
+        >
             
             {/* Image Container - Fixed aspect ratio */}
             <div className="relative w-full h-48 overflow-hidden">
@@ -55,6 +62,7 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
                                 href={link}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
                                 className="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full transition-all duration-200 transform hover:scale-110 shadow-lg"
                                 title="View Live Project"
                             >
@@ -66,6 +74,7 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
                                 href={github}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
                                 className="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full transition-all duration-200 transform hover:scale-110 shadow-lg"
                                 title="View Source Code"
                             >
@@ -107,18 +116,11 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
                         )}
                     </div>
                     
-                    {/* External link icon - Bottom right */}
+                    {/* External link icon - Bottom right - Removed since whole card is clickable */}
                     <div className="flex justify-end">
-                        <button
-                            onClick={() => {
-                                console.log('Clicking with project:', project);
-                                onProjectClick && onProjectClick(project);
-                            }}
-                            className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
-                            title="View Project Details"
-                        >
+                        <div className="text-purple-400 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
                             <FaExternalLinkAlt className="w-4 h-4" />
-                        </button>
+                        </div>
                     </div>
                 </div>
             </div>
