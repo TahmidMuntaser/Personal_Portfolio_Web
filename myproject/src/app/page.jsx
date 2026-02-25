@@ -21,6 +21,36 @@ const HomePage = () => {
 const projectsData = [
       {
           id: 1,
+          title: 'AutoCP',
+          description: 'Automated problem generation platform for competitive programming based on selected topics and difficulty ratings.',
+          fullDescription: 'AutoCP is an advanced platform designed to automate the generation of programming problems and test cases. The system allows users to select topics and difficulty levels, automatically generating comprehensive problem sets with validated test cases. It streamlines the process of creating programming challenges for educational purposes and competitive programming practice.',
+          imageUrl: '/AutoCP/AutoCP1.png',
+          link: 'https://auto-cp.vercel.app/',
+          github: 'https://github.com/TahmidMuntaser/AutoCP',
+          tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+          features: [
+              'Automated problem set generation based on selected topic and difficulty rating',
+              'Interactive UI for test case generation and validation workflows',
+              'Correct input-output handling with comprehensive validation',
+              'Interactive forms to collect user constraints and display generated content',
+              'Integration with backend APIs for problem generation and validation',
+              'Real-time display of generated problems and test cases',
+              'User-friendly interface for competitive programming practice'
+          ],
+          gallery: [
+              '/AutoCP/AutoCP1.png',
+              '/AutoCP/AutoCP2.png',
+              '/AutoCP/AutoCP3.png',
+              '/AutoCP/AutoCP4.png',
+              '/AutoCP/AutoCP5.png',
+              '/AutoCP/AutoCP6.png',
+              '/AutoCP/AutoCP7.png',
+              '/AutoCP/AutoCP8.png',
+              '/AutoCP/AutoCP9.png',
+          ]
+      },
+      {
+          id: 2,
           title: 'ReliefLink',
           description: 'A platform to connect relief organizations, volunteers, and affected individuals, ensuring resources are efficiently allocated to areas in need.',
           fullDescription: 'The purpose is to ensure efficient resource distribution, real-time status tracking, and transparent communication. The project aims to connect relief organizations, volunteers, and affected individuals, ensuring resources are efficiently allocated to areas in need. The primary goals of this Relief Link platform are to ensure that relief resources reach the most affected areas efficiently, reducing waste and avoiding overlap in aid distribution.',
@@ -50,7 +80,7 @@ const projectsData = [
           ]
       },
       {
-          id: 2,
+          id: 3,
           title: 'AutoDocs',
           description: 'Fast, secure, and user-friendly platform for managing and accessing academic documents with verified delivery and payment options.',
           fullDescription: 'Seamlessly access and download your academic records and certificates with fast, secure payment options. AutoDocs ensures verified delivery of your important documents, providing a hassle-free experience for students and educational institutions alike.',
