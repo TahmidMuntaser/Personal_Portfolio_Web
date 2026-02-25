@@ -7,11 +7,13 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
     const getTagColor = (tag) => {
         const colors = {
             'React': 'bg-blue-600/20 text-blue-300',
+            'React.js': 'bg-blue-600/20 text-blue-300',
             'Next.js': 'bg-gray-600/20 text-gray-300',
             'Tailwind CSS': 'bg-cyan-600/20 text-cyan-300',
             'JavaScript': 'bg-yellow-600/20 text-yellow-300',
             'TypeScript': 'bg-blue-500/20 text-blue-400',
             'Node.js': 'bg-green-600/20 text-green-300',
+            'Express.js': 'bg-gray-700/20 text-gray-300',
             'Python': 'bg-yellow-500/20 text-yellow-400',
             'Django': 'bg-green-700/20 text-green-400',
             'MongoDB': 'bg-green-500/20 text-green-300',
@@ -45,13 +47,14 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
         >
             
             {/* Image Container - Fixed aspect ratio */}
-            <div className="relative w-full h-48 overflow-hidden">
+            <div className="relative w-full h-48 bg-gray-900 overflow-hidden shrink-0">
                 <Image
                     src={imageUrl}
                     alt={title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={false}
                 />
 
                 {/* Overlay on hover */}
@@ -86,8 +89,9 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
             </div>
 
             {/* Content Section */}
-            <div className="p-5 bg-gradient-to-b from-purple-900/45 to-purple-900/20 min-h-[200px]">
-                <div className="flex flex-col h-full">
+            <div className="p-5 bg-gray-900 min-h-[200px]">
+                <div className="absolute inset-x-0 bottom-0 top-48 bg-gradient-to-b from-purple-900/45 to-purple-900/30 pointer-events-none"></div>
+                <div className="relative flex flex-col h-full">
                     <div className="flex-1">
                         <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300 line-clamp-2">
                             {title}
@@ -124,9 +128,6 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
                     </div>
                 </div>
             </div>
-
-            {/* Subtle border glow on hover */}
-            <div className="absolute inset-0 rounded-xl border border-purple-500/0 group-hover:border-purple-500/30 transition-all duration-300 pointer-events-none"></div>
         </div>
     )
 }
