@@ -62,13 +62,13 @@ const Navbar = () => {
       <nav
         className={`z-50 flex items-center justify-between transition-all duration-300 p-3 ${
           scrolled
-            ? 'fixed top-0 left-0 right-0 p-6  bg-gradient-to-r from-[#221636] via-[#1a0a2e] to-[#350c57] shadow-md animate-jump'
-            : 'relative p-6 bg-gradient-to-r from-[#221636] via-[#1a0a2e] to-[#350c57]'
+            ? 'fixed top-0 left-0 right-0 p-6  bg-[#020D19] shadow-md animate-jump'
+            : 'relative p-6 bg-[#020D19]'
         }`}
       >
         <div className="flex items-center">
           <span 
-            className="text-2xl font-bold tracking-widest text-white cursor-pointer hover:text-purple-300 transition-colors duration-300"
+            className="text-2xl font-bold tracking-widest text-white cursor-pointer hover:text-teal-300 transition-colors duration-300"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             TAHMID
@@ -77,23 +77,23 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4 font-bold tracking-widest text-lg">
-          <a href="#services" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#services" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
             Services
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#works" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#works" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
             Works
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#resume" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#resume" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
             Resume
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#skills" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#skills" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
             Skills
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#contact" onClick={handleLinkClick} className="relative group text-white hover:text-purple-300 transition-colors duration-300">
+          <a href="#contact" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
             Contact
             <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
@@ -122,7 +122,7 @@ const Navbar = () => {
       <div className={`fixed inset-0 z-40 transition-opacity duration-300 md:hidden ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         {/* Backdrop */}
         <div 
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+          className="absolute inset-0 bg-[#020D19] backdrop-blur-sm"
           onClick={() => setMobileMenuOpen(false)}
         ></div>
         
@@ -134,35 +134,35 @@ const Navbar = () => {
               <a 
                 href="#services" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-purple-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-purple-500/30 hover:border-purple-500"
+                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
               >
                 Services
               </a>
               <a 
                 href="#works" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-purple-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-purple-500/30 hover:border-purple-500"
+                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
               >
                 Works
               </a>
               <a 
                 href="#resume" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-purple-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-purple-500/30 hover:border-purple-500"
+                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
               >
                 Resume
               </a>
               <a 
                 href="#skills" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-purple-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-purple-500/30 hover:border-purple-500"
+                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
               >
                 Skills
               </a>
               <a 
                 href="#contact" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-purple-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-purple-500/30 hover:border-purple-500"
+                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
               >
                 Contact
               </a>
@@ -180,7 +180,7 @@ const Navbar = () => {
             </div>
 
             {/* Footer Text */}
-            <div className="text-center text-purple-300/70 text-sm">
+            <div className="text-center text-teal-300/70 text-sm">
               Let's work together!
             </div>
           </div>

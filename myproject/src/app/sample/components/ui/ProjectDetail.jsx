@@ -70,9 +70,9 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
             'Html': 'bg-orange-500/20 text-orange-300 border-orange-400/30',
             'HTML': 'bg-orange-500/20 text-orange-300 border-orange-400/30',
             'CSS': 'bg-blue-400/20 text-blue-300 border-blue-300/30',
-            'Vite': 'bg-purple-600/20 text-purple-300 border-purple-500/30',
+            'Vite': 'bg-teal-600/20 text-teal-300 border-teal-500/30',
         };
-        return colors[tag] || 'bg-purple-600/20 text-purple-300 border-purple-500/30';
+        return colors[tag] || 'bg-teal-600/20 text-teal-300 border-teal-500/30';
     };
 
     const handleBackdropClick = (e) => {
@@ -91,14 +91,14 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
 
     return (
         <div 
-            className={`fixed inset-0 bg-black/70 backdrop-blur-xl z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 transition-opacity duration-300 ${isAnimating ? 'opacity-100' : 'opacity-0'}`}
+            className={`fixed inset-0 bg-[#020D19]/70 backdrop-blur-xl z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 transition-opacity duration-300 ${isAnimating ? 'opacity-100' : 'opacity-0'}`}
             onClick={handleBackdropClick}
         >
             {/* Modal Container with Glassmorphism - Full Scroll */}
             <div className={`relative bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-900/95 backdrop-blur-2xl w-full max-w-6xl max-h-[96vh] rounded-3xl shadow-2xl border border-white/10 transition-all duration-500 overflow-y-auto custom-scrollbar ${isAnimating ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
                 
                 {/* Animated Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-900/5 via-purple-700/5 to-purple-500/5 animate-gradient pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/5 via-teal-700/5 to-teal-500/5 animate-gradient pointer-events-none"></div>
                 
                 {/* Close Button - Fixed Position */}
                 <div className="sticky top-0 z-50 flex justify-end p-4 pointer-events-none">
@@ -128,7 +128,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                     {/* Hero Content */}
                     <div className="relative h-full flex flex-col justify-end p-6 sm:p-8 md:p-10">
                         {/* Title with Gradient */}
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-100 via-purple-200 to-white bg-clip-text text-transparent mb-3 drop-shadow-2xl animate-fadeIn">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-emerald-100 via-teal-200 to-white bg-clip-text text-transparent mb-3 drop-shadow-2xl animate-fadeIn">
                             {project.title}
                         </h1>
                         
@@ -138,7 +138,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                         </p>
                         
                         {/* Decorative Line */}
-                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-600 to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-teal-600 to-transparent"></div>
                     </div>
                 </div>
 
@@ -152,7 +152,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group relative overflow-hidden bg-gradient-to-br from-purple-700 to-purple-900 hover:from-purple-600 hover:to-purple-800 text-white p-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/50"
+                                     className="group relative overflow-hidden bg-gradient-to-br from-teal-700 to-teal-900 hover:from-teal-600 hover:to-teal-800 text-white p-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-teal-500/50"
                                 >
                                     <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                                     <div className="relative flex items-center justify-center gap-2">
@@ -201,7 +201,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                         {/* About Section - Glassmorphism Card */}
                         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                             <div className="flex items-center gap-3 mb-4">
-                                <div className="w-1 h-8 bg-gradient-to-b from-purple-600 to-purple-900 rounded-full"></div>
+                                <div className="w-1 h-8 bg-gradient-to-b from-teal-600 to-teal-900 rounded-full"></div>
                                 <h2 className="text-2xl font-bold text-white">
                                     About This Project
                                 </h2>
@@ -226,11 +226,11 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                     {project.features.map((feature, index) => (
                                         <div 
                                             key={index} 
-                                            className="group relative overflow-hidden bg-gradient-to-r from-white/5 to-white/10 hover:from-purple-900/20 hover:to-purple-700/20 p-5 rounded-xl border border-white/10 hover:border-purple-600/50 transition-all duration-300 hover:scale-[1.02]"
+                                            className="group relative overflow-hidden bg-gradient-to-r from-white/5 to-white/10 hover:from-teal-900/20 hover:to-teal-700/20 p-5 rounded-xl border border-white/10 hover:border-teal-600/50 transition-all duration-300 hover:scale-[1.02]"
                                             style={{ animationDelay: `${index * 100}ms` }}
                                         >
                                             {/* Number Badge */}
-                                                    <div className="absolute top-3 right-3 w-8 h-8 bg-gradient-to-br from-purple-700 to-purple-900 rounded-lg flex items-center justify-center text-white text-sm font-bold shadow-lg opacity-60 group-hover:opacity-100 transition-opacity">
+                                                    <div className="absolute top-3 right-3 w-8 h-8 bg-gradient-to-br from-teal-700 to-teal-900 rounded-lg flex items-center justify-center text-white text-sm font-bold shadow-lg opacity-60 group-hover:opacity-100 transition-opacity">
                                                 {index + 1}
                                             </div>
                                             
@@ -247,7 +247,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                             </div>
                                             
                                             {/* Hover Effect Line */}
-                                            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-700 to-purple-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                                            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-700 to-teal-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                                         </div>
                                     ))}
                                 </div>
@@ -258,7 +258,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                         {project.gallery && project.gallery.length > 0 && (
                             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-1 h-8 bg-gradient-to-b from-purple-600 to-purple-900 rounded-full"></div>
+                                    <div className="w-1 h-8 bg-gradient-to-b from-teal-600 to-teal-900 rounded-full"></div>
                                     <h2 className="text-2xl font-bold text-white">
                                         Project Gallery
                                     </h2>
@@ -270,7 +270,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                     {project.gallery.map((image, index) => (
                                         <div 
                                             key={index} 
-                                                    className="group relative aspect-video rounded-xl overflow-hidden cursor-pointer border-2 border-white/10 hover:border-purple-600/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-600/30"
+                                                     className="group relative aspect-video rounded-xl overflow-hidden cursor-pointer border-2 border-white/10 hover:border-teal-600/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-600/30"
                                             onClick={() => openImageModal(image, index)}
                                             style={{ animationDelay: `${index * 50}ms` }}
                                         >
@@ -286,7 +286,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                                                     {/* Zoom Icon */}
-                                                            <div className="w-12 h-12 bg-gradient-to-br from-purple-700 to-purple-900 rounded-full flex items-center justify-center mb-2 transform scale-75 group-hover:scale-100 transition-transform">
+                                                            <div className="w-12 h-12 bg-gradient-to-br from-teal-700 to-teal-900 rounded-full flex items-center justify-center mb-2 transform scale-75 group-hover:scale-100 transition-transform">
                                                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                                                         </svg>
@@ -296,7 +296,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                             </div>
                                             
                                             {/* Counter Badge */}
-                                            <div className="absolute top-2 left-2 bg-black/70 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-bold border border-white/20">
+                                            <div className="absolute top-2 left-2 bg-[#020D19]/70 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-bold border border-white/20">
                                                 {index + 1}/{project.gallery.length}
                                             </div>
                                         </div>
@@ -310,7 +310,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
             {/* Image Lightbox Modal - Enhanced */}
             {selectedImage && (
                 <div 
-                    className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[60] flex items-center justify-center p-4 animate-fadeIn" 
+                    className="fixed inset-0 bg-[#020D19]/95 backdrop-blur-xl z-[60] flex items-center justify-center p-4 animate-fadeIn" 
                     onClick={closeImageModal}
                 >
                     <div className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
@@ -331,7 +331,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                     e.stopPropagation();
                                     openImageModal(project.gallery[selectedImage.index - 1], selectedImage.index - 1);
                                 }}
-                                className="absolute left-2 sm:left-4 z-10 bg-white/10 backdrop-blur-md hover:bg-purple-600 text-white p-4 rounded-full transition-all duration-300 hover:scale-110 border border-white/20 shadow-xl"
+                                className="absolute left-2 sm:left-4 z-10 bg-white/10 backdrop-blur-md hover:bg-teal-600 text-white p-4 rounded-full transition-all duration-300 hover:scale-110 border border-white/20 shadow-xl"
                                 title="Previous (←)"
                             >
                                 <FaChevronLeft className="w-6 h-6" />
@@ -344,7 +344,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                                     e.stopPropagation();
                                     openImageModal(project.gallery[selectedImage.index + 1], selectedImage.index + 1);
                                 }}
-                                className="absolute right-2 sm:right-4 z-10 bg-white/10 backdrop-blur-md hover:bg-purple-600 text-white p-4 rounded-full transition-all duration-300 hover:scale-110 border border-white/20 shadow-xl"
+                                className="absolute right-2 sm:right-4 z-10 bg-white/10 backdrop-blur-md hover:bg-teal-600 text-white p-4 rounded-full transition-all duration-300 hover:scale-110 border border-white/20 shadow-xl"
                                 title="Next (→)"
                             >
                                 <FaChevronRight className="w-6 h-6" />
@@ -363,7 +363,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
                         </div>
 
                         {/* Image Counter */}
-                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-md text-white px-6 py-3 rounded-full border border-white/20 shadow-xl">
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-[#020D19]/80 backdrop-blur-md text-white px-6 py-3 rounded-full border border-white/20 shadow-xl">
                             <span className="text-sm font-bold">
                                 {selectedImage.index + 1} / {project.gallery.length}
                             </span>

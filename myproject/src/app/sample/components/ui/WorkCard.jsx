@@ -18,12 +18,12 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
             'Django': 'bg-green-700/20 text-green-400',
             'MongoDB': 'bg-green-500/20 text-green-300',
             'Firebase': 'bg-orange-600/20 text-orange-300',
-            'Vite': 'bg-purple-600/20 text-purple-300',
+            'Vite': 'bg-teal-600/20 text-teal-300',
             'SQLite3': 'bg-blue-700/20 text-blue-400',
             'Html': 'bg-orange-500/20 text-orange-300',
             'CSS': 'bg-blue-400/20 text-blue-300'
         };
-        return colors[tag] || 'bg-purple-600/20 text-purple-300'; 
+        return colors[tag] || 'bg-teal-600/20 text-teal-300'; 
     };
 
     // Create complete project object with ALL properties
@@ -43,7 +43,7 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
     return(
         <div 
             onClick={() => onProjectClick && onProjectClick(project)}
-            className="relative bg-gray-900 rounded-xl overflow-hidden group shadow-2xl transition-all duration-500 hover:shadow-purple-500/20 hover:-translate-y-2 w-full cursor-pointer"
+            className="relative bg-gray-900 rounded-xl overflow-hidden group shadow-2xl transition-all duration-500 hover:shadow-teal-500/20 hover:-translate-y-2 w-full cursor-pointer"
         >
             
             {/* Image Container - Fixed aspect ratio */}
@@ -66,7 +66,7 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
-                                className="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full transition-all duration-200 transform hover:scale-110 shadow-lg"
+                                className="bg-teal-600 hover:bg-teal-700 text-white p-3 rounded-full transition-all duration-200 transform hover:scale-110 shadow-lg"
                                 title="View Live Project"
                             >
                                 <FaEye className="w-5 h-5" />
@@ -90,10 +90,10 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
 
             {/* Content Section */}
             <div className="p-5 bg-gray-900 min-h-[200px]">
-                <div className="absolute inset-x-0 bottom-0 top-48 bg-gradient-to-b from-purple-900/45 to-purple-900/30 pointer-events-none"></div>
+                <div className="absolute inset-x-0 bottom-0 top-48 bg-gradient-to-b from-emerald-900/45 to-teal-900/30 pointer-events-none"></div>
                 <div className="relative flex flex-col h-full">
                     <div className="flex-1">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300 line-clamp-2">
+                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-teal-300 transition-colors duration-300 line-clamp-2">
                             {title}
                         </h3>
                         <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">
@@ -122,7 +122,7 @@ const WorkCard = ({id, title, description, fullDescription, imageUrl, link, gith
                     
                     {/* External link icon - Bottom right - Removed since whole card is clickable */}
                     <div className="flex justify-end">
-                        <div className="text-purple-400 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
+                        <div className="text-teal-400 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
                             <FaExternalLinkAlt className="w-4 h-4" />
                         </div>
                     </div>
