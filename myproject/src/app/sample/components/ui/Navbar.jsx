@@ -6,6 +6,7 @@ import CustomButton from './Button';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [nameHover, setNameHover] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,12 +68,29 @@ const Navbar = () => {
         }`}
       >
         <div className="flex items-center">
-          <span 
-            className="text-2xl font-bold tracking-widest text-white cursor-pointer hover:text-teal-300 transition-colors duration-300"
+          <div
+            className="cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === 'Enter') window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           >
-            TAHMID
-          </span>
+            {/** Single text element with gradient background to color parts differently */}
+            <span
+              className="text-2xl font-bold tracking-normal bg-clip-text text-transparent transition-all duration-300"
+              style={{
+                backgroundImage: nameHover
+                  ? 'linear-gradient(90deg,#14b8a6 0%,#14b8a6 48%,#ffffff 48%,#ffffff 100%)'
+                  : 'linear-gradient(90deg,#ffffff 0%,#ffffff 48%,#14b8a6 48%,#14b8a6 100%)'
+              }}
+              onMouseEnter={() => setNameHover(true)}
+              onMouseLeave={() => setNameHover(false)}
+              onFocus={() => setNameHover(true)}
+              onBlur={() => setNameHover(false)}
+            >
+              TAHMID MUNTASER
+            </span>
+          </div>
         </div>
 
         {/* Desktop Navigation */}
