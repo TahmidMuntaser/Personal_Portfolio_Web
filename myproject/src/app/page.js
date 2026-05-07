@@ -14,17 +14,17 @@ import {
   FaDocker,
   FaPython,
   FaHtml5,
-  FaCss3Alt,
   FaGitAlt,
   FaGithub,
-  FaCode
+  FaCode,
+  FaCss3Alt
 } from 'react-icons/fa';
 import {
-  SiJavascript,
   SiDjango,
   SiCplusplus,
   SiNextdotjs,
   SiTailwindcss,
+  SiJavascript,
   SiPostgresql,
   SiSqlite
 } from 'react-icons/si';
@@ -137,25 +137,22 @@ const HomePage = () => {
           {
             id: 1,
             title: 'Web Development',
-            description: 'Building responsive and functional websites using modern technologies.'
+            description: 'Responsive websites with a clean, modern feel.'
           },
           {
             id: 2,
             title: 'Frontend Development',
-            description:
-              'Build visually appealing and highly responsive interfaces using modern frontend technologies like React, Next.js, and Tailwind CSS.'
+            description: 'Simple, responsive interfaces built with React and Tailwind.'
           },
           {
             id: 3,
             title: 'Backend Development',
-            description:
-              'Develop secure and scalable APIs and server-side applications using Django and Django REST Framework.'
+            description: 'Secure APIs and server-side apps with Django and DRF.'
           },
           {
             id: 4,
             title: 'Programming Solutions',
-            description:
-              'Solve complex problems, create efficient algorithms, and build custom applications using Python, Java, or C/C++.'
+            description: 'Practical problem-solving and custom software solutions.'
           }
         ]}
       />

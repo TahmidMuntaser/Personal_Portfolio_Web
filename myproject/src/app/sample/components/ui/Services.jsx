@@ -15,32 +15,32 @@ const Services = ({ services }) => {
     const featuredTracks = [
         {
             title: "Full-Stack Product Builds",
-            eyebrow: "End-to-end delivery",
-            description: "Building complete web applications with Next.js, React, Django, and production-ready data flows.",
+            eyebrow: "Delivery",
+            description: "Full-stack applications with Next.js, React, and Django.",
             icon: <FaGlobe className="text-2xl text-teal-100" />
         },
         {
             title: "Frontend Systems",
-            eyebrow: "UI engineering",
-            description: "Crafting responsive, user-focused interfaces with strong layout structure, interaction polish, and Tailwind-based styling.",
+            eyebrow: "UI",
+            description: "Clean, responsive interfaces with Tailwind.",
             icon: <FaCode className="text-2xl text-teal-100" />
         },
         {
             title: "Backend Architecture",
-            eyebrow: "API and logic",
-            description: "Designing secure APIs, server-side workflows, and maintainable backend systems with Django and Django REST Framework.",
+            eyebrow: "APIs",
+            description: "Secure APIs and maintainable backend logic.",
             icon: <FaServer className="text-2xl text-teal-100" />
         },
         {
             title: "Data and Automation",
-            eyebrow: "Pipelines and scale",
-            description: "Working with scraping, caching, structured data, and database-backed features that support larger application workflows.",
+            eyebrow: "Data",
+            description: "Scraping, caching, and structured workflows.",
             icon: <FaDatabase className="text-2xl text-teal-100" />
         },
         {
             title: "Problem Solving Mindset",
-            eyebrow: "Competitive edge",
-            description: "Applying strong algorithmic thinking, rapid iteration, and hackathon experience to turn rough ideas into working software fast.",
+            eyebrow: "Mindset",
+            description: "Fast iteration and strong problem solving.",
             icon: <FaTrophy className="text-2xl text-teal-100" />
         }
     ];
@@ -48,52 +48,52 @@ const Services = ({ services }) => {
     const offerItems = [
         {
             title: "Full-Stack Apps",
-            description: "Full-stack web application development using Next.js, React.js, Django, and PostgreSQL.",
+            description: "Full-stack applications with Next.js, React, and Django.",
             icon: <SiNextdotjs className="text-xl text-cyan-200" />
         },
         {
             title: "REST API Systems",
-            description: "REST API development and backend system design with Django REST Framework.",
+            description: "REST APIs and backend logic.",
             icon: <SiDjango className="text-xl text-cyan-200" />
         },
         {
             title: "Responsive Frontend",
-            description: "Responsive and user-focused frontend development with Tailwind CSS.",
+            description: "Responsive frontend work with Tailwind.",
             icon: <SiTailwindcss className="text-xl text-cyan-200" />
         },
         {
             title: "Scalable Platforms",
-            description: "Scalable data-driven platforms with filtering, comparison, and real-time features.",
+            description: "Data-driven platforms with live features.",
             icon: <FaServer className="text-xl text-cyan-200" />
         },
         {
             title: "Automation Pipelines",
-            description: "Web scraping, automation, and caching solutions for large-scale data collection.",
+            description: "Scraping, automation, and caching.",
             icon: <FaRobot className="text-xl text-cyan-200" />
         },
         {
             title: "AI Workflows",
-            description: "AI-integrated application workflows and interactive problem-solving platforms.",
+            description: "AI-powered workflows and problem solving.",
             icon: <FaCode className="text-xl text-cyan-200" />
         },
         {
             title: "Database Design",
-            description: "Database design and management using PostgreSQL and SQLite.",
+            description: "PostgreSQL and SQLite database design.",
             icon: <FaDatabase className="text-xl text-cyan-200" />
         },
         {
             title: "Dev Workflow",
-            description: "Clean, maintainable code with Git, GitHub, and Docker-based workflows.",
+            description: "Git, GitHub, and Docker workflows.",
             icon: <FaDocker className="text-xl text-cyan-200" />
         },
         {
             title: "Competitive Problem Solving",
-            description: "Strong problem-solving skills backed by 1300+ competitive programming problems solved.",
+            description: "1300+ coding problems solved.",
             icon: <FaTrophy className="text-xl text-cyan-200" />
         },
         {
             title: "Team Collaboration",
-            description: "Team collaboration and rapid prototyping experience through national-level hackathons.",
+            description: "Hackathon teamwork and rapid prototyping.",
             icon: <SiGithub className="text-xl text-cyan-200" />
         }
     ];
@@ -131,17 +131,14 @@ const Services = ({ services }) => {
                     <div className="grid gap-8 px-5 py-8 md:grid-cols-[1.1fr_0.9fr] md:px-7 md:py-9">
                         <div>
                             <p className="mb-4 text-sm uppercase tracking-[0.4em] text-cyan-200/80">
-                                What I Offer
+                                Services
                             </p>
                             <h2 className="max-w-3xl text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-                                Engineering modern products with a
+                                Modern products with a
                                 <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-emerald-200 bg-clip-text text-transparent">
-                                    strong tech stack and a problem-solver mindset.
+                                    strong stack and a problem-solver mindset.
                                 </span>
                             </h2>
-                            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
-                                From full-stack apps to backend systems, automation, AI workflows, and fast prototypes, I build software that is practical, scalable, and cleanly engineered.
-                            </p>
                         </div>
 
                         <div className="grid gap-4 sm:grid-cols-2">
@@ -184,10 +181,7 @@ const Services = ({ services }) => {
                         </p>
                         <div className="mb-5 rounded-2xl border border-cyan-300/10 bg-cyan-300/[0.04] px-4 py-4">
                             <p className="font-mono text-sm text-cyan-100/70">
-                                <span className="text-emerald-300">$</span> scan capabilities --focus engineering
-                            </p>
-                            <p className="mt-3 text-sm leading-6 text-slate-300">
-                                A focused snapshot of how I build, ship, and solve problems across the stack.
+                                <span className="text-emerald-300">$</span> scan capabilities
                             </p>
                         </div>
 
@@ -213,7 +207,7 @@ const Services = ({ services }) => {
                                                     TRK-{String(index + 1).padStart(2, "0")}
                                                 </span>
                                             </div>
-                                            <p className="mt-3 text-sm leading-6 text-slate-300">
+                                            <p className="mt-3 text-xs leading-5 text-slate-300 md:text-sm md:leading-6">
                                                 {service.description}
                                             </p>
                                         </div>
@@ -248,7 +242,7 @@ const Services = ({ services }) => {
                                         </span>
                                     </div>
                                     <h4 className="text-lg font-semibold text-white">{item.title}</h4>
-                                    <p className="mt-2 text-sm leading-6 text-slate-300">
+                                    <p className="mt-2 text-xs leading-5 text-slate-300 md:text-sm md:leading-6">
                                         {item.description}
                                     </p>
                                 </article>
@@ -259,20 +253,20 @@ const Services = ({ services }) => {
 
                 <div className="grid gap-4 md:grid-cols-4">
                     <div className="rounded-2xl border border-white/10 bg-black/15 px-5 py-4">
-                        <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Frontend</p>
-                        <p className="mt-3 text-white">React, Next.js, Tailwind</p>
+                        <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Delivery</p>
+                        <p className="mt-3 text-white">On time, clearly</p>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-black/15 px-5 py-4">
-                        <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Backend</p>
-                        <p className="mt-3 text-white">Django, DRF, APIs</p>
+                        <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Quality</p>
+                        <p className="mt-3 text-white">Clean code, ready to ship</p>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-black/15 px-5 py-4">
-                        <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Data</p>
-                        <p className="mt-3 text-white">PostgreSQL, SQLite, caching</p>
+                        <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Support</p>
+                        <p className="mt-3 text-white">Easy to improve later</p>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-black/15 px-5 py-4">
-                        <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Build Style</p>
-                        <p className="mt-3 text-white">Clean code, automation, speed</p>
+                        <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Outcome</p>
+                        <p className="mt-3 text-white">Simple, useful products</p>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,8 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import CustomButton from './Button';
+import Typewriter from './Typewriter';
 import { FaXTwitter, FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const AnimatedText = ({ text, showCursor = true, initialDelay = 0, letterDelay = 0.1 }) => {
@@ -20,6 +23,33 @@ const AnimatedText = ({ text, showCursor = true, initialDelay = 0, letterDelay =
   );
 };
 
+const RotatingTitle = () => {
+  const titles = [
+    "Full-Stack Software Developer",
+    "Competitive Programmer",
+    "Problem Solver",
+    "Backend Engineer",
+    "Frontend Specialist"
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % titles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const current = titles[currentIndex];
+
+  return (
+    <h1 className="text-center md:text-left text-lg sm:text-xl md:text-2xl font-semibold mt-2 pt-1 text-teal-300 leading-tight">
+      <AnimatedText text={current} showCursor={false} initialDelay={0} letterDelay={0.04} />
+    </h1>
+  );
+};
+
 const Hero = () => {
   return (
     <section id='resume' className="flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-14 pt-16 md:pt-0 pb-16 md:pb-0 bg-[#020D19] text-white">
@@ -36,14 +66,18 @@ const Hero = () => {
             </div>
           </h2>
 
-          <h1 className="text-center md:text-left text-3xl sm:text-4xl md:text-6xl font-bold mt-4 pt-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-teal-600 leading-tight">
-            Innovative Web <br className="hidden sm:block" />
-            <span className="block mt-1">Developer.</span>
-          </h1>
+          <Typewriter
+            texts={[
+              "FullStack Software Developer",
+              "Competitive Programmer",
+              "Problem Solver",
+              "Backend Engineer",
+              "Frontend Specialist"
+            ]}
+          />
           
           <p className="text-center md:text-left text-base sm:text-lg md:text-xl mt-6 pb-6 text-white/90 leading-relaxed">
-            I am a passionate developer who loves building beautiful and functional web 
-            applications. Explore my work and get in touch!
+            I am a passionate developer who loves building beautiful and functional software. Explore my work and get in touch!
           </p>
 
           

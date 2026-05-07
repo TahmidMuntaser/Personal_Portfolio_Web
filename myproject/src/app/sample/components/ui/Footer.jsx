@@ -51,13 +51,13 @@ const Footer = () => {
                                 Tahmid Muntaser
                             </p>
                             <h3 className="max-w-2xl text-3xl font-bold leading-tight text-white md:text-4xl">
-                                Building clean, practical web products
+                                Building clean, practical software
                                 <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-emerald-200 bg-clip-text text-transparent">
                                     with a strong engineering mindset.
                                 </span>
                             </h3>
-                            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300 md:text-base">
-                                Full-stack applications, polished frontend work, and backend systems built to stay useful and maintainable.
+                            <p className="mt-5 max-w-xl text-sm leading-6 text-slate-300">
+                                Clean, practical software built to last.
                             </p>
                         </div>
 
