@@ -15,13 +15,13 @@ const Contact = () => {
               <span className="h-3 w-3 rounded-full bg-amber-300"></span>
               <span className="h-3 w-3 rounded-full bg-emerald-400"></span>
             </div>
-            <p className="hidden font-mono text-[11px] uppercase tracking-[0.35em] text-emerald-100/45 sm:block">skill-terminal.sh</p>
+            <p className="hidden font-mono text-[11px] uppercase tracking-[0.35em] text-emerald-100/45 sm:block">contact-terminal.sh</p>
           </div>
 
           <div className="grid gap-8 px-6 py-8 md:grid-cols-[1.1fr_0.9fr] md:px-8 md:py-10">
             <div>
               <h2 className="text-4xl md:text-6xl font-semibold bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent leading-tight">Contact</h2>
-              <p className="mt-3 text-base md:text-lg text-slate-300 max-w-xl">I build clean, production-ready web apps. If you have a project, a question, or just want to say hi — drop a message.</p>
+              <p className="mt-3 text-base md:text-lg text-slate-300 max-w-xl">If you have a question, or just want to say hi - drop a message.</p>
 
               <div className="mt-6 font-mono text-base md:text-lg text-slate-300 bg-[#06141a] border border-emerald-600/5 rounded-lg p-5 md:p-6">
                 <p className="text-emerald-300 text-base md:text-lg">$ cat contact.txt</p>
