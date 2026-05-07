@@ -71,7 +71,7 @@ const Skills = ({ skills }) => {
                                 <span className="text-emerald-300">$</span> ls portfolio/stack
                             </p>
                             <p className="mt-1 text-xs leading-6 text-slate-400 sm:text-sm">
-                                Interactive terminal view of languages, frameworks, and tooling.
+                                Interactive view of languages, frameworks, and tooling.
                             </p>
                         </div>
                     </div>

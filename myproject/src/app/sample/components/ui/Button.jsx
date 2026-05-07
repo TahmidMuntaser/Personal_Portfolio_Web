@@ -1,16 +1,17 @@
 import React from 'react';
 
 const CustomButton = ({ children, href, onClick, className = "", ...props }) => {
-  const baseClasses = "group relative inline-block bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white rounded-xl px-6 py-3 text-lg font-bold shadow-xl hover:shadow-2xl hover:shadow-teal-500/25 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 focus:outline-none active:outline-none cursor-pointer text-center no-underline border border-teal-500/30 backdrop-blur-sm overflow-hidden";
+  const baseClasses = "group relative inline-flex items-center justify-center bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full px-6 py-3 text-base md:text-lg font-semibold shadow-xl hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-300 ease-in-out hover:scale-[1.03] hover:-translate-y-0.5 focus:outline-none active:outline-none cursor-pointer text-center no-underline border border-emerald-300/20 backdrop-blur-sm overflow-hidden";
   
   if (href) {
     return (
       <a
         {...props}
         href={href}
+        onClick={onClick}
         className={`${baseClasses} ${className}`}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/20 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
         <span className="relative z-10 flex items-center justify-center gap-2">
           {children}
         </span>
@@ -25,7 +26,7 @@ const CustomButton = ({ children, href, onClick, className = "", ...props }) => 
       className={`${baseClasses} ${className}`}
     >
       {/* Hover effect overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-teal-500/0 via-teal-500/20 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
       
       {/* Content */}
       <span className="relative z-10 flex items-center justify-center gap-2">

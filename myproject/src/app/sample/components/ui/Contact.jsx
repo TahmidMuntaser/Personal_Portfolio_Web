@@ -1,68 +1,64 @@
-import React from "react";  
+"use client";
+
+import React from "react";
+import CustomButton from './Button';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
-    return(
-        <section id="contact" className="min-h-screen px-6 md:px-16 lg:px-20 pt-16 md:pt-20 pb-0 md:pb-12 text-white scroll-mt-40">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-12 lg:gap-16">
-                    {/* Contact Form */}
-                    <div className="bg-gradient-to-b from-emerald-900/45 to-teal-900/20 p-8 md:p-12 lg:p-16 rounded-2xl w-full lg:flex-1">
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-teal-400 mb-6">Let's work together!</h2>
-                        <p className="text-gray-300 mb-8 md:mb-10 text-sm md:text-base">I make clean and simple designs that bring your ideas to life!</p>
-                        <form className="flex flex-col gap-4">
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <input type="text" placeholder="First Name" className="bg-gray-950 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-teal-500 text-white placeholder-gray-400" />
-                                <input type="text" placeholder="Last Name" className="bg-gray-950 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-teal-500 text-white placeholder-gray-400" />
-                            </div>
-
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <input type="email" placeholder="Email" className="bg-gray-950 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-teal-500 text-white placeholder-gray-400" />
-                                <input type="text" placeholder="Phone Number" className="bg-gray-950 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-teal-500 text-white placeholder-gray-400" />
-                            </div>
-
-                            <textarea placeholder="Message" className="bg-gray-950 p-3 rounded-lg h-32 resize-none focus:outline-none focus:ring-2 focus:ring-teal-500 text-white placeholder-gray-400"></textarea>
-                            <button type="submit" className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 p-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">Send Message</button>
-                        </form>
-                    </div>
-
-                    {/* Contact Details */}
-                    <div className="flex flex-col gap-6 md:gap-8 w-full lg:flex-1">
-                        <div className="flex items-center gap-4">
-                            <div className="bg-teal-800 p-3 md:p-4 rounded-full flex-shrink-0">
-                                <FaPhoneAlt className="text-lg md:text-xl"/>
-                            </div>
-                            <div>
-                                <h4 className="text-xs md:text-sm text-gray-400">Phone</h4>
-                                <p className="text-white text-lg md:text-xl font-mono">01643372506</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-center gap-4">
-                            <div className="bg-teal-800 p-3 md:p-4 rounded-full flex-shrink-0">
-                                <FaEnvelope className="text-lg md:text-xl"/>
-                            </div>
-                            <div>
-                                <h4 className="text-xs md:text-sm text-gray-400">Email</h4>
-                                <p className="text-white text-lg md:text-xl font-mono break-all">tahmidmuntaser80@gmail.com</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-center gap-4">
-                            <div className="bg-teal-800 p-3 md:p-4 rounded-full flex-shrink-0">
-                                <FaMapMarkerAlt className="text-lg md:text-xl"/>
-                            </div>
-                            <div>
-                                <h4 className="text-xs md:text-sm text-gray-400">Address</h4>
-                                <p className="text-white text-lg md:text-xl font-mono">Mirpur-12 <br />
-                                Dhaka, Bangladesh</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <section id="contact" className="py-16 px-6 md:px-14 lg:px-20 scroll-mt-32 bg-[#020D19] text-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="overflow-hidden rounded-[32px] border border-white/10 bg-[#07141c]/90 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+          <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 md:px-8">
+            <div className="flex items-center gap-2">
+              <span className="h-3 w-3 rounded-full bg-rose-400"></span>
+              <span className="h-3 w-3 rounded-full bg-amber-300"></span>
+              <span className="h-3 w-3 rounded-full bg-emerald-400"></span>
             </div>
-        </section>
-    );
+            <p className="hidden font-mono text-[11px] uppercase tracking-[0.35em] text-emerald-100/45 sm:block">skill-terminal.sh</p>
+          </div>
+
+          <div className="grid gap-8 px-6 py-8 md:grid-cols-[1.1fr_0.9fr] md:px-8 md:py-10">
+            <div>
+              <h2 className="text-4xl md:text-6xl font-semibold bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent leading-tight">Contact</h2>
+              <p className="mt-3 text-base md:text-lg text-slate-300 max-w-xl">I build clean, production-ready web apps. If you have a project, a question, or just want to say hi — drop a message.</p>
+
+              <div className="mt-6 font-mono text-base md:text-lg text-slate-300 bg-[#06141a] border border-emerald-600/5 rounded-lg p-5 md:p-6">
+                <p className="text-emerald-300 text-base md:text-lg">$ cat contact.txt</p>
+                <p className="mt-3"><span className="text-teal-300">Phone:</span> <span className="text-white font-medium">+880 1643 372506</span></p>
+                <p className="mt-2"><span className="text-teal-300">Email:</span> <span className="text-white font-medium break-words">tahmidmuntaser80@gmail.com</span></p>
+                <p className="mt-2"><span className="text-teal-300">Location:</span> <span className="text-white font-medium">Mirpur-12, Dhaka, Bangladesh</span></p>
+              </div>
+
+              <div className="mt-6 flex items-center gap-4">
+                <CustomButton href="#contact" className="px-6 py-3">Hire Me</CustomButton>
+                <a href="mailto:tahmidmuntaser80@gmail.com" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors"><FaEnvelope className="text-emerald-400"/> Email me</a>
+              </div>
+            </div>
+
+            <div>
+              <form onSubmit={(e)=>{e.preventDefault(); /* TODO: wire submission */ }} className="space-y-4 font-mono">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <input name="firstName" placeholder="First name" className="bg-transparent border border-white/8 rounded-md px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" required />
+                  <input name="lastName" placeholder="Last name" className="bg-transparent border border-white/8 rounded-md px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+                </div>
+
+                <input name="email" type="email" placeholder="Email" className="w-full bg-transparent border border-white/8 rounded-md px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" required />
+
+                <input name="phone" type="tel" placeholder="Phone" className="w-full bg-transparent border border-white/8 rounded-md px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+
+                <textarea name="message" rows={5} placeholder="Message" className="w-full bg-transparent border border-white/8 rounded-md px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" required />
+
+                <div className="pt-1">
+                  <button type="submit" className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold px-4 py-2 rounded-md">Send message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Contact;

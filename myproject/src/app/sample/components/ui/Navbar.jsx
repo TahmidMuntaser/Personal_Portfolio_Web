@@ -127,61 +127,80 @@ const Navbar = () => {
         ></div>
         
         {/* Sidebar */}
-        <div className={`absolute top-0 right-0 h-full w-80 bg-gradient-to-b from-[#221636] via-[#1a0a2e] to-[#350c57] transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="flex flex-col h-full p-8 pt-28">
-            {/* Mobile Navigation Links */}
-            <div className="flex flex-col space-y-8 text-center">
+        <div className={`absolute top-0 right-0 h-full w-[88vw] max-w-sm bg-[#07141c] border-l border-emerald-400/10 shadow-[0_24px_80px_rgba(0,0,0,0.45)] transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="flex h-full flex-col overflow-hidden">
+            <div className="flex items-center justify-between border-b border-emerald-400/10 bg-[#0b1622] px-4 py-3.5">
+              <div className="flex items-center gap-2">
+                <span className="h-3 w-3 rounded-full bg-rose-400"></span>
+                <span className="h-3 w-3 rounded-full bg-amber-300"></span>
+                <span className="h-3 w-3 rounded-full bg-emerald-400"></span>
+              </div>
+              <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-emerald-100/45">
+                mobile-shell.sh
+              </p>
+            </div>
+
+            <div className="flex-1 overflow-y-auto px-5 py-6 pt-12">
+              <div className="mb-6">
+                <p className="font-mono text-xs uppercase tracking-[0.28em] text-emerald-100/45">Navigation</p>
+                <h2 className="mt-2 text-xl font-semibold text-white">Open the command list</h2>
+                <p className="mt-2 text-sm leading-5 text-slate-300">Tap a section to jump there, or press Hire Me to jump straight to contact.</p>
+              </div>
+
+              {/* Mobile Navigation Links */}
+              <div className="flex flex-col space-y-2.5 text-center">
               <a 
                 href="#services" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
                 Services
               </a>
               <a 
                 href="#works" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
                 Works
               </a>
               <a 
                 href="#resume" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
                 Resume
               </a>
               <a 
                 href="#skills" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
                 Skills
               </a>
               <a 
                 href="#contact" 
                 onClick={handleLinkClick}
-                className="text-xl font-bold text-white hover:text-teal-300 transition-all duration-300 hover:scale-105 pb-2 border-b border-teal-500/30 hover:border-teal-500"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
                 Contact
               </a>
             </div>
 
-            {/* Mobile Hire Me Button */}
-            <div className="mt-auto mb-8">
-              <CustomButton 
-                href="#contact" 
-                className="w-full justify-center"
-                onClick={handleLinkClick}
-              >
-                Hire Me
-              </CustomButton>
-            </div>
+              {/* Mobile Hire Me Button */}
+              <div className="mt-6">
+                <CustomButton 
+                  href="#contact" 
+                  className="w-full justify-center"
+                  onClick={handleLinkClick}
+                >
+                  Hire Me
+                </CustomButton>
+              </div>
 
-            {/* Footer Text */}
-            <div className="text-center text-teal-300/70 text-sm">
-              Let's work together!
+              {/* Footer Text */}
+              <div className="mt-4 text-center text-teal-300/70 text-xs font-mono">
+                {`$`} let's work together
+              </div>
             </div>
           </div>
         </div>
