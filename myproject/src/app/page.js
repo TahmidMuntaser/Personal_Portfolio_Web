@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Navbar from './sample/components/ui/Navbar';
 import Hero from './sample/components/ui/Hero';
 import Services from './sample/components/ui/Services';
@@ -6,8 +7,27 @@ import Contact from './sample/components/ui/Contact';
 import Footer from './sample/components/ui/Footer';
 import Skills from './sample/components/ui/Skills';
 import Works from './sample/components/ui/Works';
-import { FaReact, FaJava, FaServer, FaDocker } from 'react-icons/fa';
-import { SiJavascript, SiDjango, SiCplusplus, SiNextdotjs } from 'react-icons/si';
+import {
+  FaReact,
+  FaJava,
+  FaServer,
+  FaDocker,
+  FaPython,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+  FaGithub,
+  FaCode
+} from 'react-icons/fa';
+import {
+  SiJavascript,
+  SiDjango,
+  SiCplusplus,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiPostgresql,
+  SiSqlite
+} from 'react-icons/si';
 
 const HomePage = () => {
   const projectsData = [
@@ -142,14 +162,35 @@ const HomePage = () => {
       <Works projects={projectsData} />
       <Skills
         skills={[
-          { name: 'React', icon: <FaReact size={50} /> },
           { name: 'JavaScript', icon: <SiJavascript size={50} /> },
+          { name: 'C', icon: <FaCode size={50} /> },
+          { name: 'C++', icon: <SiCplusplus size={50} /> },
+          { name: 'Python', icon: <FaPython size={50} /> },
+          { name: 'HTML', icon: <FaHtml5 size={50} /> },
+          { name: 'CSS', icon: <FaCss3Alt size={50} /> },
+          { name: 'React', icon: <FaReact size={50} /> },
           { name: 'Next.js', icon: <SiNextdotjs size={50} /> },
+          { name: 'Tailwind CSS', icon: <SiTailwindcss size={50} /> },
           { name: 'Django', icon: <SiDjango size={50} /> },
           { name: 'Django REST', icon: <FaServer size={50} /> },
-          { name: 'Java', icon: <FaJava size={50} /> },
-          { name: 'C++', icon: <SiCplusplus size={50} /> },
-          { name: 'Docker', icon: <FaDocker size={50} /> }
+          { name: 'PostgreSQL', icon: <SiPostgresql size={50} /> },
+          { name: 'SQLite', icon: <SiSqlite size={50} /> },
+          { name: 'Git', icon: <FaGitAlt size={50} /> },
+          { name: 'GitHub', icon: <FaGithub size={50} /> },
+          {
+            name: 'Playwright',
+            icon: (
+              <Image
+                src="/icons/playwright.svg"
+                alt="Playwright logo"
+                width={50}
+                height={50}
+                className="h-[50px] w-[50px] object-contain"
+              />
+            )
+          },
+          { name: 'Docker', icon: <FaDocker size={50} /> },
+          { name: 'Java', icon: <FaJava size={50} /> }
         ]}
       />
       <Contact />
