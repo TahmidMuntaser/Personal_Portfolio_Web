@@ -1,100 +1,39 @@
 "use client";
 
 import React from 'react';
-import { FaGlobe, FaCode, FaServer, FaLaptopCode, FaDatabase, FaDocker, FaRobot, FaTrophy } from "react-icons/fa";
-import { SiTailwindcss, SiPostgresql, SiDjango, SiNextdotjs, SiGithub } from "react-icons/si";
+import { FaGlobe, FaCode, FaServer, FaDatabase, FaTrophy } from "react-icons/fa";
 
-const Services = ({ services }) => {
-    const iconMap = {
-        1: <FaGlobe className="text-2xl text-teal-100" />,
-        2: <FaCode className="text-2xl text-teal-100" />,
-        3: <FaServer className="text-2xl text-teal-100" />,
-        4: <FaLaptopCode className="text-2xl text-teal-100" />
-    };
-
+const Services = () => {
     const featuredTracks = [
         {
             title: "Full-Stack Product Builds",
             eyebrow: "Delivery",
             description: "Full-stack applications with Next.js, React, and Django.",
-            icon: <FaGlobe className="text-2xl text-teal-100" />
+            icon: <FaGlobe className="text-2xl text-cyan-200" />
         },
         {
             title: "Frontend Systems",
             eyebrow: "UI",
             description: "Clean, responsive interfaces with Tailwind.",
-            icon: <FaCode className="text-2xl text-teal-100" />
+            icon: <FaCode className="text-2xl text-cyan-200" />
         },
         {
             title: "Backend Architecture",
             eyebrow: "APIs",
             description: "Secure APIs and maintainable backend logic.",
-            icon: <FaServer className="text-2xl text-teal-100" />
+            icon: <FaServer className="text-2xl text-cyan-200" />
         },
         {
             title: "Data and Automation",
             eyebrow: "Data",
             description: "Scraping, caching, and structured workflows.",
-            icon: <FaDatabase className="text-2xl text-teal-100" />
+            icon: <FaDatabase className="text-2xl text-cyan-200" />
         },
         {
             title: "Problem Solving Mindset",
             eyebrow: "Mindset",
             description: "Fast iteration and strong problem solving.",
-            icon: <FaTrophy className="text-2xl text-teal-100" />
-        }
-    ];
-
-    const offerItems = [
-        {
-            title: "Full-Stack Apps",
-            description: "Full-stack applications with Next.js, React, and Django.",
-            icon: <SiNextdotjs className="text-xl text-cyan-200" />
-        },
-        {
-            title: "REST API Systems",
-            description: "REST APIs and backend logic.",
-            icon: <SiDjango className="text-xl text-cyan-200" />
-        },
-        {
-            title: "Responsive Frontend",
-            description: "Responsive frontend work with Tailwind.",
-            icon: <SiTailwindcss className="text-xl text-cyan-200" />
-        },
-        {
-            title: "Scalable Platforms",
-            description: "Data-driven platforms with live features.",
-            icon: <FaServer className="text-xl text-cyan-200" />
-        },
-        {
-            title: "Automation Pipelines",
-            description: "Scraping, automation, and caching.",
-            icon: <FaRobot className="text-xl text-cyan-200" />
-        },
-        {
-            title: "AI Workflows",
-            description: "AI-powered workflows and problem solving.",
-            icon: <FaCode className="text-xl text-cyan-200" />
-        },
-        {
-            title: "Database Design",
-            description: "PostgreSQL and SQLite database design.",
-            icon: <FaDatabase className="text-xl text-cyan-200" />
-        },
-        {
-            title: "Dev Workflow",
-            description: "Git, GitHub, and Docker workflows.",
-            icon: <FaDocker className="text-xl text-cyan-200" />
-        },
-        {
-            title: "Competitive Problem Solving",
-            description: "1300+ coding problems solved.",
-            icon: <FaTrophy className="text-xl text-cyan-200" />
-        },
-        {
-            title: "Team Collaboration",
-            description: "Hackathon teamwork and rapid prototyping.",
-            icon: <SiGithub className="text-xl text-cyan-200" />
+            icon: <FaTrophy className="text-2xl text-cyan-200" />
         }
     ];
 
@@ -116,6 +55,7 @@ const Services = ({ services }) => {
             <div className="absolute right-[-4rem] bottom-12 h-72 w-72 rounded-full bg-emerald-400/10 blur-3xl pointer-events-none"></div>
 
             <div className="relative max-w-7xl mx-auto">
+                {/* Terminal header card */}
                 <div className="mb-10 overflow-hidden rounded-[34px] border border-cyan-400/15 bg-[#06131b]/90 shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-sm md:mb-14">
                     <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 md:px-7">
                         <div className="flex items-center gap-2">
@@ -162,111 +102,80 @@ const Services = ({ services }) => {
                     </div>
                 </div>
 
-                <div className="mb-8 grid gap-5 lg:grid-cols-[0.82fr_1.18fr]">
-                    <div className="overflow-hidden rounded-[30px] border border-white/10 bg-[#07141c] shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-sm">
-                        <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 md:px-7">
-                            <div className="flex items-center gap-2">
-                                <span className="h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
-                                <span className="h-2.5 w-2.5 rounded-full bg-emerald-300"></span>
-                                <span className="h-2.5 w-2.5 rounded-full bg-slate-500"></span>
-                            </div>
-                            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-cyan-100/45">
-                                core-tracks.log
-                            </p>
+                {/* Core Tracks panel */}
+                <div className="mb-8 overflow-hidden rounded-[30px] border border-white/10 bg-[#07141c] shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-sm">
+                    <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 md:px-7">
+                        <div className="flex items-center gap-2">
+                            <span className="h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
+                            <span className="h-2.5 w-2.5 rounded-full bg-emerald-300"></span>
+                            <span className="h-2.5 w-2.5 rounded-full bg-slate-500"></span>
                         </div>
-
-                        <div className="p-6 md:p-7">
-                        <p className="mb-5 text-xs uppercase tracking-[0.32em] text-cyan-100/60">
-                            Core Tracks
+                        <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-cyan-100/45">
+                            core-tracks.log
                         </p>
-                        <div className="mb-5 rounded-2xl border border-cyan-300/10 bg-cyan-300/[0.04] px-4 py-4">
+                    </div>
+
+                    <div className="p-6 md:p-7">
+                        {/* Terminal prompt */}
+                        <div className="mb-6 rounded-2xl border border-cyan-300/10 bg-cyan-300/[0.04] px-4 py-4">
                             <p className="font-mono text-sm text-cyan-100/70">
                                 <span className="text-emerald-300">$</span> scan capabilities
                             </p>
                         </div>
 
-                        <div className="space-y-3">
+                        <div className="mb-4 flex items-center justify-between">
+                            <p className="text-xs uppercase tracking-[0.32em] text-cyan-100/60">
+                                Core Tracks
+                            </p>
+                            <p className="text-xs text-slate-400">{featuredTracks.length} items loaded</p>
+                        </div>
+
+                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                             {featuredTracks.map((service, index) => (
                                 <div
                                     key={service.title}
-                                    className="group rounded-2xl border border-white/8 bg-black/20 px-4 py-4 transition-colors duration-300 hover:border-cyan-300/20 hover:bg-cyan-300/[0.05]"
+                                    className="group rounded-2xl border border-white/8 bg-black/20 px-5 py-5 transition-colors duration-300 hover:border-cyan-300/20 hover:bg-cyan-300/[0.05]"
                                 >
-                                    <div className="flex items-start gap-4">
-                                        <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-300/15 bg-cyan-300/10">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-300/15 bg-cyan-300/10">
                                             {service.icon}
                                         </div>
-                                        <div className="min-w-0 flex-1">
-                                            <div className="flex items-start justify-between gap-3">
-                                                <div>
-                                                    <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-100/55">
-                                                        {service.eyebrow}
-                                                    </p>
-                                                    <h3 className="mt-1 text-lg font-semibold text-white">{service.title}</h3>
-                                                </div>
-                                                <span className="rounded-full border border-cyan-300/10 bg-cyan-300/[0.05] px-2 py-1 font-mono text-[11px] text-cyan-100/45">
-                                                    TRK-{String(index + 1).padStart(2, "0")}
-                                                </span>
-                                            </div>
-                                            <p className="mt-3 text-xs leading-5 text-slate-300 md:text-sm md:leading-6">
-                                                {service.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                        </div>
-                    </div>
-
-                    <div className="rounded-[30px] border border-white/10 bg-white/[0.045] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-sm md:p-7">
-                        <div className="mb-5 flex items-center justify-between gap-4">
-                            <p className="text-xs uppercase tracking-[0.32em] text-cyan-100/60">
-                                Capability Matrix
-                            </p>
-                            <p className="text-xs text-slate-400">10 items loaded</p>
-                        </div>
-
-                        <div className="grid gap-4 md:grid-cols-2">
-                            {offerItems.map((item, index) => (
-                                <article
-                                    key={item.title}
-                                    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#081720] px-4 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/30"
-                                >
-                                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/60 to-transparent"></div>
-                                    <div className="mb-4 flex items-center justify-between">
-                                        <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-300/15 bg-cyan-300/10">
-                                            {item.icon}
-                                        </span>
-                                        <span className="font-mono text-xs text-cyan-100/45">
-                                            [{String(index + 1).padStart(2, "0")}]
+                                        <span className="rounded-full border border-cyan-300/10 bg-cyan-300/[0.05] px-2 py-1 font-mono text-[11px] text-cyan-100/45">
+                                            TRK-{String(index + 1).padStart(2, "0")}
                                         </span>
                                     </div>
-                                    <h4 className="text-lg font-semibold text-white">{item.title}</h4>
-                                    <p className="mt-2 text-xs leading-5 text-slate-300 md:text-sm md:leading-6">
-                                        {item.description}
+                                    
+                                    <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-100/55 mb-1.5">
+                                        {service.eyebrow}
                                     </p>
-                                </article>
+                                    <h3 className="text-lg font-semibold text-white mb-2">{service.title}</h3>
+                                    
+                                    <p className="text-xs leading-5 text-slate-300 md:text-sm md:leading-6">
+                                        {service.description}
+                                    </p>
+                                </div>
                             ))}
                         </div>
                     </div>
                 </div>
 
+                {/* Bottom stat bar */}
                 <div className="grid gap-4 md:grid-cols-4">
                     <div className="rounded-2xl border border-white/10 bg-black/15 px-5 py-4">
                         <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Delivery</p>
-                        <p className="mt-3 text-white">On time, clearly</p>
+                        <p className="mt-3 text-white text-sm">On time, clearly</p>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-black/15 px-5 py-4">
                         <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Quality</p>
-                        <p className="mt-3 text-white">Clean code, ready to ship</p>
+                        <p className="mt-3 text-white text-sm">Clean code, ready to ship</p>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-black/15 px-5 py-4">
                         <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Support</p>
-                        <p className="mt-3 text-white">Easy to improve later</p>
+                        <p className="mt-3 text-white text-sm">Easy to improve later</p>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-black/15 px-5 py-4">
                         <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/55">Outcome</p>
-                        <p className="mt-3 text-white">Simple, useful products</p>
+                        <p className="mt-3 text-white text-sm">Simple, useful products</p>
                     </div>
                 </div>
             </div>
