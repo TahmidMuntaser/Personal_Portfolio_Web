@@ -7,6 +7,9 @@ import Contact from './sample/components/ui/Contact';
 import Footer from './sample/components/ui/Footer';
 import Skills from './sample/components/ui/Skills';
 import Works from './sample/components/ui/Works';
+import Education from './sample/components/ui/Education';
+import Achievements from './sample/components/ui/Achievements';
+import CompetitiveProfiles from './sample/components/ui/CompetitiveProfiles';
 import {
   FaReact,
   FaJava,
@@ -128,6 +131,63 @@ const HomePage = () => {
     }
   ];
 
+  const educationData = {
+    degree: 'B.Sc. (Eng.) in Computer Science and Engineering',
+    institution: 'Jashore University of Science and Technology',
+    duration: '2022 - 2025',
+    cgpa: '3.49 / 4.00',
+    highlights: [
+      'Built full-stack academic and production-style software projects during undergraduate studies.',
+      'Focused on software engineering, backend systems, and competitive programming practice.',
+      'Combined coursework with hackathons and practical product development.'
+    ]
+  };
+
+  const codingProfiles = [
+    {
+      platform: 'Codeforces',
+      handle: 'TAHMIDMUNTASER',
+      url: 'https://codeforces.com/profile/TAHMIDMUNTASER',
+      maxRating: '1230',
+      solved: '800+ problems',
+      rank: 'Pupil'
+    },
+    {
+      platform: 'CodeChef',
+      handle: 'tahmidmuntaser',
+      url: 'https://www.codechef.com/users/tahmidmuntaser',
+      maxRating: '1610',
+      solved: '250+ problems',
+      rank: '3-star'
+    },
+    {
+      platform: 'LeetCode',
+      handle: 'tahmid25muntaser',
+      url: 'https://leetcode.com/u/tahmid25muntaser/',
+      maxRating: '1534',
+      solved: '250+ problems',
+      rank: 'Active'
+    }
+  ];
+
+  const achievementsData = [
+    {
+      event: 'SOLVIO AI Hackathon 2025',
+      badge: 'Top 10 / 538',
+      description: 'Competed as Team JUST_DOMinators and reached the final round among 538 teams.'
+    },
+    {
+      event: 'HackTheAI - Green University of Bangladesh',
+      badge: '41st / 242',
+      description: 'Finished in the final round as Team JUST_DOMinators with a top-50 placement.'
+    },
+    {
+      event: 'BUP CSE TECH CARNIVAL 2025',
+      badge: 'Top 20 / 80',
+      description: 'Reached the final round as Team JUST_DOMinators and placed among the top 20 teams.'
+    }
+  ];
+
   return (
     <div>
       <Navbar />
@@ -156,7 +216,9 @@ const HomePage = () => {
           }
         ]}
       />
+      <Education education={educationData} />
       <Works projects={projectsData} />
+      <CompetitiveProfiles profiles={codingProfiles} />
       <Skills
         skills={[
           { name: 'JavaScript', icon: <SiJavascript size={50} /> },
@@ -190,6 +252,7 @@ const HomePage = () => {
           { name: 'Java', icon: <FaJava size={50} /> }
         ]}
       />
+      <Achievements achievements={achievementsData} />
       <Contact />
       <Footer />
     </div>

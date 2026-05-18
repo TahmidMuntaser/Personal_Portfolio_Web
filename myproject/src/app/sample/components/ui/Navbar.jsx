@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import CustomButton from './Button';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [nameHover, setNameHover] = useState(false);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,23 +28,39 @@ const Navbar = () => {
 
   // Close mobile menu when clicking on a link
   const handleLinkClick = (e) => {
-    setMobileMenuOpen(false);
-    
-    // Smooth scroll  
     const href = e.currentTarget.getAttribute('href');
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const navbarHeight = 80; 
-        const elementPosition = targetElement.offsetTop - navbarHeight;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth'
-        });
-      }
+
+    setMobileMenuOpen(false);
+
+    if (!href?.startsWith('#')) {
+      return;
     }
+
+    e.preventDefault();
+
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (!targetElement) {
+      return;
+    }
+
+    const scrollToSection = () => {
+      const navbarHeight = navRef.current?.getBoundingClientRect().height ?? 0;
+      const extraOffset = 4;
+      const elementPosition =
+        targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight - extraOffset;
+
+      window.scrollTo({
+        top: Math.max(0, elementPosition),
+        behavior: 'smooth'
+      });
+    };
+
+    const isMobileView = window.innerWidth < 768;
+    const delay = isMobileView && mobileMenuOpen ? 320 : 0;
+
+    window.setTimeout(scrollToSection, delay);
   };
 
   // Prevent body scroll when mobile menu is open
@@ -61,13 +78,15 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`z-50 flex items-center justify-between transition-all duration-300 p-3 ${
+        ref={navRef}
+        className={`z-50 transition-all duration-300 p-3 ${
           scrolled
-            ? 'fixed top-0 left-0 right-0 p-6  bg-[#020D19] shadow-md animate-jump'
-            : 'relative p-6 bg-[#020D19]'
+            ? 'fixed top-0 left-0 right-0 px-4 py-4 md:px-8 lg:px-10 bg-[#020D19]/95 shadow-md backdrop-blur-md animate-jump'
+            : 'relative px-4 py-4 md:px-8 lg:px-10 bg-[#020D19]'
         }`}
       >
-        <div className="flex items-center">
+        <div className="flex items-center justify-between gap-4 md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-6">
+        <div className="flex items-center md:justify-self-start">
           <div
             className="cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -75,9 +94,8 @@ const Navbar = () => {
             tabIndex={0}
             onKeyDown={(e) => { if (e.key === 'Enter') window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           >
-            {/** Single text element with gradient background to color parts differently */}
             <span
-              className="text-2xl font-bold tracking-normal bg-clip-text text-transparent transition-all duration-300"
+              className="text-lg font-bold tracking-[0.04em] bg-clip-text text-transparent transition-all duration-300 md:text-xl lg:text-[1.35rem]"
               style={{
                 backgroundImage: nameHover
                   ? 'linear-gradient(90deg,#14b8a6 0%,#14b8a6 48%,#ffffff 48%,#ffffff 100%)'
@@ -87,38 +105,39 @@ const Navbar = () => {
               onMouseLeave={() => setNameHover(false)}
               onFocus={() => setNameHover(true)}
               onBlur={() => setNameHover(false)}
-            >
+          >
               TAHMID MUNTASER
             </span>
           </div>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-4 font-bold tracking-widest text-lg">
-          <a href="#services" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
+        <div className="hidden md:flex md:justify-self-center items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-200 lg:text-xs">
+          <a href="#services" onClick={handleLinkClick} className="relative rounded-full px-3 py-2 text-white/85 transition-all duration-300 hover:bg-white/[0.04] hover:text-teal-300">
             Services
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#works" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
+          <a href="#education" onClick={handleLinkClick} className="relative rounded-full px-3 py-2 text-white/85 transition-all duration-300 hover:bg-white/[0.04] hover:text-teal-300">
+            Education
+          </a>
+          <a href="#works" onClick={handleLinkClick} className="relative rounded-full px-3 py-2 text-white/85 transition-all duration-300 hover:bg-white/[0.04] hover:text-teal-300">
             Works
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#resume" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
-            Resume
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
+          <a href="#cp" onClick={handleLinkClick} className="relative rounded-full px-3 py-2 text-white/85 transition-all duration-300 hover:bg-white/[0.04] hover:text-teal-300">
+            CP
           </a>
-          <a href="#skills" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
+          <a href="#achievements" onClick={handleLinkClick} className="relative rounded-full px-3 py-2 text-white/85 transition-all duration-300 hover:bg-white/[0.04] hover:text-teal-300">
+            Achievements
+          </a>
+          <a href="#skills" onClick={handleLinkClick} className="relative rounded-full px-3 py-2 text-white/85 transition-all duration-300 hover:bg-white/[0.04] hover:text-teal-300">
             Skills
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
-          <a href="#contact" onClick={handleLinkClick} className="relative group text-white hover:text-teal-300 transition-colors duration-300">
+          <a href="#contact" onClick={handleLinkClick} className="relative rounded-full px-3 py-2 text-white/85 transition-all duration-300 hover:bg-white/[0.04] hover:text-teal-300">
             Contact
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-bottom-right group-hover:origin-bottom-left"></span>
           </a>
         </div>
 
         {/* Desktop Hire Me Button */}
-        <div className="hidden md:block">
+        <div className="hidden md:block md:justify-self-end md:scale-90 lg:scale-100">
           <CustomButton href="#contact">
             Hire Me
           </CustomButton>
@@ -134,6 +153,7 @@ const Navbar = () => {
           <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
           <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
         </button>
+        </div>
       </nav>
 
       {/* Mobile Sidebar */}
@@ -158,8 +178,9 @@ const Navbar = () => {
               </p>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-5 py-6 pt-12">
-              <div className="mb-6">
+            <div className="flex flex-1 flex-col overflow-y-auto px-5 py-8">
+              <div className="mx-auto w-full max-w-xs text-center pt-6 pb-4">
+                <div className="mb-8">
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-emerald-100/45">Navigation</p>
                 <h2 className="mt-2 text-xl font-semibold text-white">Open the command list</h2>
                 <p className="mt-2 text-sm leading-5 text-slate-300">Tap a section to jump there, or press Hire Me to jump straight to contact.</p>
@@ -170,42 +191,56 @@ const Navbar = () => {
               <a 
                 href="#services" 
                 onClick={handleLinkClick}
-                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-sm font-semibold tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
                 Services
               </a>
               <a 
+                href="#education" 
+                onClick={handleLinkClick}
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-sm font-semibold tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
+              >
+                Education
+              </a>
+              <a 
                 href="#works" 
                 onClick={handleLinkClick}
-                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-sm font-semibold tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
                 Works
               </a>
               <a 
-                href="#resume" 
+                href="#achievements" 
                 onClick={handleLinkClick}
-                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-sm font-semibold tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
-                Resume
+                Achievements
+              </a>
+              <a 
+                href="#cp" 
+                onClick={handleLinkClick}
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-sm font-semibold tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
+              >
+                CP
               </a>
               <a 
                 href="#skills" 
                 onClick={handleLinkClick}
-                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-sm font-semibold tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
                 Skills
               </a>
               <a 
                 href="#contact" 
                 onClick={handleLinkClick}
-                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
+                className="rounded-xl border border-emerald-400/10 bg-[#08131d] px-4 py-3 text-sm font-semibold tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-[#0b1a24] hover:text-teal-300"
               >
                 Contact
               </a>
             </div>
 
               {/* Mobile Hire Me Button */}
-              <div className="mt-6">
+              <div className="mt-8 pb-4">
                 <CustomButton 
                   href="#contact" 
                   className="w-full justify-center"
@@ -218,6 +253,7 @@ const Navbar = () => {
               {/* Footer Text */}
               <div className="mt-4 text-center text-teal-300/70 text-xs font-mono">
                 {`$`} let's work together
+              </div>
               </div>
             </div>
           </div>
