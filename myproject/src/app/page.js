@@ -36,6 +36,47 @@ const HomePage = () => {
   const projectsData = [
     {
       id: 1,
+      title: 'PCPriceGear',
+      description:
+        'A PC component discovery and price comparison platform with smart recommendations, wishlist support, and stock-aware shopping flows.',
+      fullDescription:
+        'PCPriceGear is a full-stack platform for exploring PC components, comparing prices, and making more informed buying decisions. It brings product discovery, comparison tools, recommendations, wishlist management, stock updates, and assistance features into one experience so users can build or upgrade PCs more efficiently.',
+      imageUrl: '/BDPriceGear/Screenshot (522).png',
+      link: 'https://bdpricegear.vercel.app/',
+      github: 'https://github.com/TahmidMuntaser/BDPriceGear-Frontend',
+      tags: [
+        'Django',
+        'Next.js',
+        'Tailwind CSS',
+        'Django REST Framework',
+        'PostgreSQL',
+        'SQLite',
+        'GitHub Action'
+      ],
+      features: [
+        'Built a price comparison platform covering 12+ categories and 22K+ PC products aggregated from 10+ Bangladeshi e-commerce sites.',
+        'Implemented real-time and scheduled web scraping pipelines with anti-bot bypass, caching, and automated data collection.',
+        'Created a side-by-side price comparison table with product images, direct purchase links, and a 5-minute TTL cache for faster responses.',
+        'Built a centralized product catalog with pre-scraped database support, product detail views, and filtering for easier discovery.',
+        'Added user services including wishlist tracking, out-of-stock subscriptions, and email alerts when products return in stock.',
+        'Developed recommendation and chatbot features to answer product questions and suggest cheaper, similar-price, or higher-price alternatives.'
+      ],
+      gallery: [
+        '/BDPriceGear/catalog.png',
+        '/BDPriceGear/DETAILS.png',
+        '/BDPriceGear/price compaer.png',
+        '/BDPriceGear/recom.png',
+        '/BDPriceGear/wishlist.png',
+        '/BDPriceGear/outofstock.png',
+        '/BDPriceGear/chatbot.png',
+        '/BDPriceGear/email.png',
+        '/BDPriceGear/Screenshot (519).png',
+        '/BDPriceGear/Screenshot (522).png',
+        '/BDPriceGear/Screenshot (523).png'
+      ]
+    },
+    {
+      id: 2,
       title: 'AutoCP',
       description:
         'Automated problem generation platform for competitive programming based on selected topics and difficulty ratings.',
@@ -67,7 +108,7 @@ const HomePage = () => {
       ]
     },
     {
-      id: 2,
+      id: 3,
       title: 'ReliefLink',
       description:
         'A platform to connect relief organizations, volunteers, and affected individuals, ensuring resources are efficiently allocated to areas in need.',
@@ -97,7 +138,7 @@ const HomePage = () => {
       ]
     },
     {
-      id: 3,
+      id: 4,
       title: 'AutoDocs',
       description:
         'Fast, secure, and user-friendly platform for managing and accessing academic documents with verified delivery and payment options.',

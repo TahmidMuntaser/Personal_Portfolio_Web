@@ -18,6 +18,21 @@ const Works = ({ projects }) => {
         setSelectedProject(null);
     };
 
+    const getCardLayoutClass = (index) => {
+        const remainder = projects.length % 3;
+        const lastRowStart = projects.length - remainder;
+
+        if (remainder === 1 && index === projects.length - 1) {
+            return 'lg:col-start-3';
+        }
+
+        if (remainder === 2 && index >= lastRowStart) {
+            return index === lastRowStart ? 'lg:col-start-2' : 'lg:col-start-4';
+        }
+
+        return '';
+    };
+
     return (
         <section
             id="works"
@@ -114,14 +129,18 @@ const Works = ({ projects }) => {
                             <p className="text-xs text-slate-400">{projects.length} items loaded</p>
                         </div>
 
-                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
                             {projects.map((project, index) => (
-                                <WorkCard
+                                <div
                                     key={project.id}
-                                    {...project}
-                                    index={index}
-                                    onProjectClick={handleProjectClick}
-                                />
+                                    className={`lg:col-span-2 ${getCardLayoutClass(index)}`}
+                                >
+                                    <WorkCard
+                                        {...project}
+                                        index={index}
+                                        onProjectClick={handleProjectClick}
+                                    />
+                                </div>
                             ))}
                         </div>
                     </div>
