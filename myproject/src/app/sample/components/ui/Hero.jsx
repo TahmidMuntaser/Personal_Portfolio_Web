@@ -83,7 +83,11 @@ const Hero = () => {
           
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
             
-          <button className="relative px-8 py-4 font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full overflow-hidden group transition-all duration-300 w-full sm:w-auto hover:shadow-lg hover:shadow-teal-500/25 hover:scale-105">
+          <a
+            href="/TAHMID_MUNTASER_SWE_CV.pdf"
+            download="TAHMID_MUNTASER_SWE_CV.pdf"
+            className="relative px-8 py-4 font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full overflow-hidden group transition-all duration-300 w-full sm:w-auto hover:shadow-lg hover:shadow-teal-500/25 hover:scale-105"
+          >
             <span className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-800 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
             <span className="relative z-10 flex items-center justify-center">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +95,7 @@ const Hero = () => {
               </svg>
               Download CV
             </span>
-          </button>
+          </a>
 
           {/* Social Icons */}
             <div className="flex space-x-4">
