@@ -2,22 +2,9 @@
 
 import React, { useMemo, useState } from 'react';
 import WorkCard from './WorkCard';
-import ProjectDetail from './ProjectDetail';
 
 const Works = ({ projects = [] }) => {
-    const [selectedProject, setSelectedProject] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeTag, setActiveTag] = useState('All');
-
-    const handleProjectClick = (project) => {
-        setSelectedProject(project);
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setSelectedProject(null);
-    };
 
     // Most-used technologies become filter buttons
     const tags = useMemo(() => {
@@ -90,7 +77,6 @@ const Works = ({ projects = [] }) => {
                             key={project.id}
                             {...project}
                             index={index}
-                            onProjectClick={handleProjectClick}
                         />
                     ))}
                 </div>
@@ -99,8 +85,6 @@ const Works = ({ projects = [] }) => {
                     <p className="py-10 text-center font-mono text-sm text-slate-500">No projects match this filter.</p>
                 )}
             </div>
-
-            <ProjectDetail project={selectedProject} isOpen={isModalOpen} onClose={closeModal} />
         </section>
     );
 };

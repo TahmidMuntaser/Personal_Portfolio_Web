@@ -2,18 +2,17 @@
 
 import React from "react";
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const slugify = (s = '') => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-const WorkCard = ({ id, title, description, fullDescription, imageUrl, link, github, tags, features, gallery, index = 0, onProjectClick }) => {
-    const project = { id, title, description, fullDescription, imageUrl, link, github, tags, features, gallery };
-    const open = () => onProjectClick && onProjectClick(project);
+const WorkCard = ({ id, title, description, fullDescription, imageUrl, link, github, tags, features, gallery, index = 0 }) => {
+    const slug = slugify(title);
 
     return (
         <article
-            onClick={open}
-            className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#081720] transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#081720] transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
         >
             {/* Mini terminal title bar: the only "terminal" touch on the card */}
             <div className="flex items-center gap-3 border-b border-white/10 bg-black/25 px-4 py-2">
@@ -23,7 +22,7 @@ const WorkCard = ({ id, title, description, fullDescription, imageUrl, link, git
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                 </div>
                 <span className="truncate font-mono text-[11px] text-slate-400">
-                    {String(index + 1).padStart(2, '0')}_{slugify(title)}
+                    {String(index + 1).padStart(2, '0')}_{slug}
                 </span>
             </div>
 
@@ -72,8 +71,7 @@ const WorkCard = ({ id, title, description, fullDescription, imageUrl, link, git
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center gap-2 rounded-lg bg-emerald-400 px-3.5 py-2 text-sm font-semibold text-[#04121b] transition-colors hover:bg-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-200"
+                            className="relative z-10 inline-flex items-center gap-2 rounded-lg bg-emerald-400 px-3.5 py-2 text-sm font-semibold text-[#04121b] transition-colors hover:bg-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-200"
                         >
                             <FaExternalLinkAlt className="h-3 w-3" /> Live Demo
                         </a>
@@ -83,20 +81,18 @@ const WorkCard = ({ id, title, description, fullDescription, imageUrl, link, git
                             href={github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-3.5 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-300"
+                            className="relative z-10 inline-flex items-center gap-2 rounded-lg border border-white/20 px-3.5 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-300"
                         >
                             <FaGithub className="h-4 w-4" /> Code
                         </a>
                     )}
-                    <button
-                        type="button"
-                        onClick={(e) => { e.stopPropagation(); open(); }}
-                        className="ml-auto inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors hover:text-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-300"
+                    <Link
+                        href={`/projects/${slug}`}
                         aria-label={`View details for ${title}`}
+                        className="ml-auto inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors hover:text-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-300 after:absolute after:inset-0 after:content-['']"
                     >
                         Details <FaArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </article>
