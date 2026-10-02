@@ -160,7 +160,7 @@ const Hero = () => {
         
         <div className="relative">
           <img
-            src="/profile2.png"
+            src="/tah234.png"
             alt="Tahmid"
             className="w-[280px] h-[320px] md:w-[350px] md:h-[400px] rounded-2xl object-cover border-4 border-teal-800 transition-transform duration-500 group-hover:scale-105 z-10 relative mx-auto"
           />

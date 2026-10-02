@@ -176,11 +176,11 @@ const HomePage = () => {
     degree: 'B.Sc. (Eng.) in Computer Science and Engineering',
     institution: 'Jashore University of Science and Technology',
     duration: '2022 - 2025',
-    cgpa: '3.49 / 4.00',
+    cgpa: '3.54 / 4.00',
     highlights: [
-      'Built full-stack academic and production-style software projects during undergraduate studies.',
-      'Focused on software engineering, backend systems, and competitive programming practice.',
-      'Combined coursework with hackathons and practical product development.'
+        'Studied software engineering, data structures, algorithms, databases, and computer systems.',
+        'Developed full-stack applications and practical software projects.',
+        'Participated in competitive programming, hackathons, and software development activities.'
     ]
   };
 
