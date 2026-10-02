@@ -77,7 +77,7 @@ const Education = ({ education }) => {
             />
             <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-[36rem] -translate-x-1/2 rounded-full bg-emerald-400/10 blur-3xl" />
 
-            <div className="relative mx-auto max-w-5xl">
+            <div className="relative mx-auto max-w-7xl">
                 {/* Header */}
                 <div className="mb-8">
                     <p className="font-mono text-sm text-emerald-300">
