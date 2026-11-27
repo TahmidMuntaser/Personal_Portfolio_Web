@@ -92,7 +92,7 @@ const Footer = () => {
                             <span className="terminal-cursor">Tahmid Muntaser</span>
                         </a>
                         <p className="text-sm leading-6 text-slate-400">
-                            Full-stack software developer building reliable web applications from database to UI.
+                            Full-Stack Engineer building web apps and APIs with Next.js, Django, and PostgreSQL.
                         </p>
                     </div>
 
