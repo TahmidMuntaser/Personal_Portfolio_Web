@@ -219,7 +219,7 @@ const ProjectDetail = ({ project }) => {
                                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                             </div>
                             <span className="truncate font-mono text-[11px] text-slate-400">
-                                ~/portfolio/projects/{slug} — zsh
+                                ~/portfolio/projects/{slug} - zsh
                             </span>
                         </div>
 
@@ -394,7 +394,7 @@ const ProjectDetail = ({ project }) => {
                                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                                 </div>
                                 <span className="text-xs text-slate-300">
-                                    {project.title} — screenshot {selectedImage.index + 1} of {gallery.length}
+                                    {project.title} - screenshot {selectedImage.index + 1} of {gallery.length}
                                 </span>
                             </div>
                             <button

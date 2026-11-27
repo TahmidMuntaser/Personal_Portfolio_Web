@@ -8,7 +8,7 @@ import { getProjectBySlug } from '../../data/projects';
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
-  return { title: project ? `${project.title} — Tahmid Muntaser` : 'Project not found' };
+  return { title: project ? `${project.title} | Tahmid Muntaser` : 'Project not found' };
 }
 
 const ProjectPage = async ({ params }) => {

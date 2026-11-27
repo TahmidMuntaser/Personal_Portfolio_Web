@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Tahmid Muntaser — Full-Stack Software Engineer",
+  title: "Tahmid Muntaser | Full-Stack Software Engineer",
   description:
     "Full-stack software developer specializing in Next.js, React, Django, and PostgreSQL. Explore selected projects, competitive programming profiles, and engineering work.",
   keywords: [
@@ -25,14 +25,14 @@ export const metadata = {
     "Competitive Programming",
   ],
   openGraph: {
-    title: "Tahmid Muntaser — Full-Stack Software Engineer",
+    title: "Tahmid Muntaser | Full-Stack Software Engineer",
     description:
       "Full-stack software developer specializing in Next.js, React, Django, and PostgreSQL.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tahmid Muntaser — Full-Stack Software Engineer",
+    title: "Tahmid Muntaser | Full-Stack Software Engineer",
     description:
       "Full-stack software developer specializing in Next.js, React, Django, and PostgreSQL.",
   },

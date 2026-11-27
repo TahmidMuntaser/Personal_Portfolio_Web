@@ -49,7 +49,7 @@ const Hero = () => {
           </div>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
-            I design and build reliable web applications from database to UI—focused on clean code, real-world utility, and performance.
+            I design and build reliable web applications from database to UI, focused on clean code, real-world utility, and performance.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">

@@ -10,7 +10,7 @@ export default function NotFound() {
             <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
           </div>
-          <span className="font-mono text-xs text-slate-400">~/portfolio/404 — zsh</span>
+          <span className="font-mono text-xs text-slate-400">~/portfolio/404 - zsh</span>
         </div>
 
         <div className="p-6 font-mono md:p-8">

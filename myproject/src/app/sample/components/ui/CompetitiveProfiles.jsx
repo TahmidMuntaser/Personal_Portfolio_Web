@@ -104,7 +104,7 @@ const useCountUp = (target, active, delay, skip) => {
 };
 
 const show = (value) =>
-    value === undefined || value === null || value === "" ? "—" : value;
+    value === undefined || value === null || value === "" ? "-" : value;
 
 const splitValue = (value) => {
     const raw = String(value ?? "");
@@ -334,7 +334,7 @@ const CompetitiveProfiles = ({ profiles = [] }) => {
                             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                         </div>
                         <p className="truncate font-mono text-xs text-slate-400">
-                            ~/portfolio/coding-profiles — zsh
+                            ~/portfolio/coding-profiles - zsh
                         </p>
                     </div>
 

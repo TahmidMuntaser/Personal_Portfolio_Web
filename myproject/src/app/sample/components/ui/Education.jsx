@@ -4,7 +4,7 @@ import React, { useEffect, useId, useState } from "react";
 import { FaGraduationCap, FaRegCalendarAlt, FaStar, FaChevronDown } from "react-icons/fa";
 
 /*
-  Education — compact Works-style terminal card.
+  Education - compact Works-style terminal card.
   Click "ls ./highlights" and the lines are typed out one by one, like a terminal.
   Same props: education.degree, institution, duration, cgpa, highlights[]
 */
@@ -95,7 +95,7 @@ const Education = ({ education }) => {
                             <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
                             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                         </div>
-                        <span className="font-mono text-[11px] text-slate-400">~/portfolio/education.md — zsh</span>
+                        <span className="font-mono text-[11px] text-slate-400">~/portfolio/education.md - zsh</span>
                     </div>
 
                     <div className="p-5 md:p-6">

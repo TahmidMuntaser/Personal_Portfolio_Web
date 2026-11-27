@@ -46,7 +46,7 @@ const Achievements = ({ achievements = [] }) => {
                                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                             </div>
                             <span className="font-mono text-xs text-slate-400">
-                                ~/portfolio/achievements — zsh
+                                ~/portfolio/achievements - zsh
                             </span>
                         </div>
                         <span className="font-mono text-[11px] text-slate-500">
