@@ -48,7 +48,7 @@ const Works = ({ projects = [] }) => {
                 {/* Simple filter */}
                 {tags.length > 2 && (
                     <div className="mb-8 flex flex-wrap items-center gap-2" role="group" aria-label="Filter projects by technology">
-                        <span className="mr-1 font-mono text-xs text-slate-500">filter:</span>
+                        <span className="mr-1 font-mono text-xs text-slate-500">$ ls --tag</span>
                         {tags.map((tag) => {
                             const on = tag === activeTag;
                             return (

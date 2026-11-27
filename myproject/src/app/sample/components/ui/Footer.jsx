@@ -20,100 +20,65 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-    { label: "Services", href: "#services" },
-    { label: "Works", href: "#works" },
-    { label: "CP", href: "#cp" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" }
+    { label: "Services", href: "/#services" },
+    { label: "Education", href: "/#education" },
+    { label: "Works", href: "/#works" },
+    { label: "CP", href: "/#cp" },
+    { label: "Skills", href: "/#skills" },
+    { label: "Achievements", href: "/#achievements" },
+    { label: "Contact", href: "/#contact" }
 ];
 
 const Footer = () => {
     return (
-        <footer className="relative overflow-hidden px-4 pb-10 pt-16 text-gray-300 md:px-8 md:pt-20 lg:px-20">
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent"></div>
-            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.08),_transparent_30%)]"></div>
+        <footer className="border-t border-white/10 bg-[#020d19] px-4 py-8 text-slate-400 md:px-8 lg:px-20">
+            <div className="mx-auto max-w-7xl space-y-6">
+                <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                    <a
+                        href="/#resume"
+                        className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-white transition-colors duration-150 hover:text-emerald-300"
+                    >
+                        <span className="text-emerald-400">&gt;_</span>
+                        <span>Tahmid Muntaser</span>
+                    </a>
 
-            <div className="relative mx-auto max-w-7xl">
-                <div className="overflow-hidden rounded-[32px] border border-white/10 bg-[#07141c]/90 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm">
-                    <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 md:px-8">
-                        <div className="flex items-center gap-2">
-                            <span className="h-3 w-3 rounded-full bg-rose-400"></span>
-                            <span className="h-3 w-3 rounded-full bg-amber-300"></span>
-                            <span className="h-3 w-3 rounded-full bg-emerald-400"></span>
-                        </div>
-                        <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-cyan-100/45">
-                            footer.sys
-                        </p>
+                    <nav aria-label="Footer navigation" className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                        {quickLinks.map((link) => (
+                            <a
+                                key={link.label}
+                                href={link.href}
+                                className="text-slate-400 transition-colors duration-150 hover:text-emerald-300"
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                    </nav>
+
+                    <div className="flex items-center gap-2">
+                        {socialLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={link.name}
+                                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300 transition-colors duration-150 hover:border-emerald-400/40 hover:text-emerald-300"
+                            >
+                                {link.icon}
+                            </a>
+                        ))}
                     </div>
+                </div>
 
-                    <div className="grid gap-10 px-6 py-8 md:grid-cols-[1.15fr_0.85fr] md:px-8 md:py-10">
-                        <div>
-                            <p className="mb-4 text-sm uppercase tracking-[0.35em] text-cyan-200/70">
-                                Tahmid Muntaser
-                            </p>
-                            <h3 className="max-w-2xl text-3xl font-bold leading-tight text-white md:text-4xl">
-                                Building clean, practical software
-                                <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-emerald-200 bg-clip-text text-transparent">
-                                    with a strong engineering mindset.
-                                </span>
-                            </h3>
-                            <p className="mt-5 max-w-xl text-sm leading-6 text-slate-300">
-                                Clean, practical software built to last.
-                            </p>
-                        </div>
-
-                        <div className="grid gap-8 sm:grid-cols-[1fr_auto] sm:items-start">
-                            <div>
-                                <p className="mb-4 text-xs uppercase tracking-[0.32em] text-cyan-100/55">
-                                    Quick Links
-                                </p>
-                                <div className="flex flex-col gap-3">
-                                    {quickLinks.map((link) => (
-                                        <a
-                                            key={link.label}
-                                            href={link.href}
-                                            className="inline-flex items-center text-sm text-slate-300 transition-colors duration-300 hover:text-cyan-200"
-                                        >
-                                            {link.label}
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="sm:justify-self-end">
-                                <p className="mb-4 text-xs uppercase tracking-[0.32em] text-cyan-100/55">
-                                    Connect
-                                </p>
-                                <div className="flex flex-wrap gap-3 sm:justify-end">
-                                    {socialLinks.map((link) => (
-                                        <a
-                                            key={link.name}
-                                            href={link.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label={link.name}
-                                            className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-300/15 bg-cyan-300/10 text-cyan-100 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-200/40 hover:bg-cyan-300/15 hover:text-white"
-                                        >
-                                            {link.icon}
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col gap-4 border-t border-white/10 px-6 py-5 text-sm text-slate-400 md:flex-row md:items-center md:justify-between md:px-8">
-                        <p>
-                            © {new Date().getFullYear()} Tahmid Muntaser. All rights reserved.
-                        </p>
-                        <a
-                            href="#resume"
-                            className="inline-flex items-center gap-2 text-cyan-200 transition-colors duration-300 hover:text-white"
-                        >
-                            <FaArrowUp size={14} />
-                            Back to top
-                        </a>
-                    </div>
+                <div className="flex flex-col gap-3 border-t border-white/10 pt-5 font-mono text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                    <p>© {new Date().getFullYear()} Tahmid Muntaser</p>
+                    <a
+                        href="/#resume"
+                        className="inline-flex items-center gap-1.5 text-slate-400 transition-colors duration-150 hover:text-emerald-300"
+                    >
+                        <FaArrowUp size={12} aria-hidden="true" />
+                        Back to top
+                    </a>
                 </div>
             </div>
         </footer>

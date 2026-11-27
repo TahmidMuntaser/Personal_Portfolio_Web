@@ -8,92 +8,107 @@ const Services = () => {
         {
             title: "Full-Stack Development",
             description: "Scalable web applications with Next.js, React, Django, and REST APIs.",
-            icon: <FaGlobe className="text-2xl text-cyan-200" />
+            icon: <FaGlobe className="text-xl text-emerald-300" />
         },
         {
             title: "SaaS & Multi-Tenant Systems",
             description: "Building scalable SaaS platforms with multi-tenant architecture.",
-            icon: <FaCode className="text-2xl text-cyan-200" />
+            icon: <FaCode className="text-xl text-emerald-300" />
         },
         {
             title: "API & SDK Development",
             description: "Reliable APIs and developer-friendly SDKs for modern applications.",
-            icon: <FaServer className="text-2xl text-cyan-200" />
+            icon: <FaServer className="text-xl text-emerald-300" />
         },
         {
             title: "Automation & Integrations",
             description: "Scraping, scheduled workflows, and third-party service integrations.",
-            icon: <FaDatabase className="text-2xl text-cyan-200" />
+            icon: <FaDatabase className="text-xl text-emerald-300" />
         },
         {
             title: "DevOps & Deployment",
             description: "Docker, CI/CD workflows, containerized applications, and deployments.",
-            icon: <FaCloud className="text-2xl text-cyan-200" />
+            icon: <FaCloud className="text-xl text-emerald-300" />
         },
         {
             title: "Database & Data Systems",
             description: "Designing structured data models, databases, caching, and data-driven workflows.",
-            icon: <FaServer className="text-2xl text-cyan-200" />
+            icon: <FaServer className="text-xl text-emerald-300" />
         }
     ];
 
     return (
         <section
             id='services'
-            className="relative overflow-hidden px-4 py-16 md:px-8 md:py-20 lg:px-20 scroll-mt-40 bg-[linear-gradient(180deg,_rgba(2,13,25,1)_0%,_rgba(4,19,27,1)_35%,_rgba(2,13,25,1)_100%)]"
+            className="relative overflow-hidden bg-[#020d19] px-4 py-16 md:px-8 md:py-20 lg:px-20 scroll-mt-40"
         >
             <div
-                className="absolute inset-0 pointer-events-none opacity-40"
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 opacity-30"
                 style={{
                     backgroundImage:
-                        "linear-gradient(rgba(148,163,184,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.09) 1px, transparent 1px)",
+                        "linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px)",
                     backgroundSize: "34px 34px"
                 }}
-            ></div>
-            <div className="absolute inset-x-0 top-0 h-52 bg-gradient-to-b from-cyan-300/10 to-transparent pointer-events-none"></div>
-            <div className="absolute left-[-5rem] top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl pointer-events-none"></div>
-            <div className="absolute right-[-4rem] bottom-12 h-72 w-72 rounded-full bg-emerald-400/10 blur-3xl pointer-events-none"></div>
+            />
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-1/2 top-0 h-64 w-[36rem] max-w-full -translate-x-1/2 rounded-full bg-emerald-400/10 blur-3xl"
+            />
 
-            <div className="relative max-w-7xl mx-auto">
-                <div className="mb-10 md:mb-14">
-                    <p className="mb-4 text-sm uppercase tracking-[0.4em] text-cyan-200/80">
-                        Services
+            <div className="relative mx-auto max-w-7xl">
+                <div className="mb-8">
+                    <p className="font-mono text-sm text-emerald-300">
+                        <span className="text-emerald-500">visitor@portfolio:~$</span> cat ./services
+                        <span className="ml-1 inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-emerald-300 motion-reduce:animate-none" />
                     </p>
-                    <h2 className="max-w-3xl text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-                        What I do.
-                        <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-emerald-200 bg-clip-text text-transparent">
-                            Built for clarity, speed, and scale.
-                        </span>
+                    <h2 className="mt-3 text-4xl font-bold text-white md:text-5xl">
+                        What I Do
                     </h2>
+                    <p className="mt-3 max-w-2xl text-sm text-slate-400 md:text-base">
+                        End-to-end engineering built for clarity, reliability, and scale.
+                    </p>
                 </div>
 
-                <div className="mb-8 overflow-hidden rounded-[30px] border border-white/10 bg-[#07141c] shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-sm">
-                    <div className="p-6 md:p-7">
-                        <div className="mb-4 flex items-center justify-between">
-                            <p className="text-xs uppercase tracking-[0.32em] text-cyan-100/60">
-                                Capabilities
-                            </p>
-                            <p className="text-xs text-slate-400">{services.length} services</p>
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#081720] shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+                    <div className="flex items-center justify-between border-b border-white/10 bg-black/25 px-4 py-2.5">
+                        <div className="flex items-center gap-3">
+                            <div className="flex gap-1.5" aria-hidden="true">
+                                <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
+                                <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+                                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                            </div>
+                            <span className="font-mono text-xs text-slate-400">
+                                ~/portfolio/capabilities — zsh
+                            </span>
                         </div>
+                        <span className="font-mono text-[11px] text-slate-500">
+                            {services.length} modules
+                        </span>
+                    </div>
 
-                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                            {services.map((service) => (
-                                <div
-                                    key={service.title}
-                                    className="group rounded-2xl border border-white/8 bg-black/20 px-5 py-5 transition-colors duration-300 hover:border-cyan-300/20 hover:bg-cyan-300/[0.05]"
-                                >
-                                    <div className="flex items-center gap-4 mb-4">
-                                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-300/15 bg-cyan-300/10">
-                                            {service.icon}
-                                        </div>
-                                        <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+                    <div className="grid gap-4 p-5 sm:grid-cols-2 lg:grid-cols-3 md:p-6">
+                        {services.map((service, index) => (
+                            <div
+                                key={service.title}
+                                className="group rounded-xl border border-white/10 bg-[#050d15] p-5 transition-colors duration-200 hover:border-emerald-400/35 hover:bg-[#07131d]"
+                            >
+                                <div className="mb-3 flex items-center justify-between">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-emerald-400/20 bg-emerald-400/10">
+                                        {service.icon}
                                     </div>
-                                    <p className="text-xs leading-5 text-slate-300 md:text-sm md:leading-6">
-                                        {service.description}
-                                    </p>
+                                    <span className="font-mono text-[11px] text-slate-500">
+                                        0{index + 1}
+                                    </span>
                                 </div>
-                            ))}
-                        </div>
+                                <h3 className="text-base font-semibold text-white transition-colors duration-200 group-hover:text-emerald-200 md:text-lg">
+                                    {service.title}
+                                </h3>
+                                <p className="mt-2 text-xs leading-5 text-slate-400 md:text-sm md:leading-6">
+                                    {service.description}
+                                </p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

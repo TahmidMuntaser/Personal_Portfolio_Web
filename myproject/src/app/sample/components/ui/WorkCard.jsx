@@ -4,8 +4,7 @@ import React from "react";
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-
-const slugify = (s = '') => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+import { slugify } from '../../../data/projects';
 
 const WorkCard = ({ id, title, description, fullDescription, imageUrl, link, github, tags, features, gallery, index = 0 }) => {
     const slug = slugify(title);

@@ -3,26 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #020d19;
+  --foreground: #f8fafc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  scrollbar-width: thin;
+  scrollbar-color: #14b8a6 #04111c;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #14b8a6 #04111c;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 body::-webkit-scrollbar,
@@ -61,62 +56,24 @@ body::-webkit-scrollbar-corner,
 }
 
 
-@keyframes jump {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  60% {
-    transform: translateY(10%);
-  }
-
-  80% {
-    transform: translateY(-5%);
-  }
-  
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.animate-jump {
-  animation: jump 0.5s ease-out;
-}
-
-@keyframes typewriter {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-letter {
-  animation: typewriter 0.5s steps(1) forwards;
-}
-
-
 .terminal-cursor::after {
-  content: "|";
-  margin-left: 2px;
+  content: "_";
+  margin-left: 3px;
   animation: blink 1s step-start infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .terminal-cursor::after {
+    animation: none;
+  }
 }
 
 @keyframes blink {
   50% {
     opacity: 0;
-  }
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }

@@ -95,30 +95,7 @@ const HomePage = () => {
     <div>
       <Navbar />
       <Hero />
-      <Services
-        services={[
-          {
-            id: 1,
-            title: 'Web Development',
-            description: 'Responsive websites with a clean, modern feel.'
-          },
-          {
-            id: 2,
-            title: 'Frontend Development',
-            description: 'Simple, responsive interfaces built with React and Tailwind.'
-          },
-          {
-            id: 3,
-            title: 'Backend Development',
-            description: 'Secure APIs and server-side apps with Django and DRF.'
-          },
-          {
-            id: 4,
-            title: 'Programming Solutions',
-            description: 'Practical problem-solving and custom software solutions.'
-          }
-        ]}
-      />
+      <Services />
       <Education education={educationData} />
       <Works projects={projectsData} />
       <CompetitiveProfiles profiles={codingProfiles} />

@@ -3,11 +3,12 @@
 import React, { useState, useEffect } from "react";
 
 const Typewriter = ({
-  texts = ["Full-StackSoftwareDeveloper", "ProblemSolver"],
-  typingSpeed = 90,
-  deletingSpeed = 40,
-  pause = 1100,
-  className = "text-base md:text-lg text-teal-300 font-semibold mt-2 pt-1 leading-tight min-h-[1.5em] block"
+  texts = ["Full-Stack Software Developer", "Problem Solver"],
+  typingSpeed = 75,
+  deletingSpeed = 35,
+  pause = 1400,
+  as: Component = "p",
+  className = "font-mono text-base md:text-lg text-emerald-300 font-medium leading-tight min-h-[1.5em] block"
 }) => {
   const [textIndex, setTextIndex] = useState(0);
   const [subText, setSubText] = useState("");
@@ -37,9 +38,9 @@ const Typewriter = ({
   }, [subText, isDeleting, textIndex, texts, typingSpeed, deletingSpeed, pause]);
 
   return (
-    <h1 className={className}>
+    <Component className={`${className} terminal-cursor`}>
       {visibleText}
-    </h1>
+    </Component>
   );
 };
 

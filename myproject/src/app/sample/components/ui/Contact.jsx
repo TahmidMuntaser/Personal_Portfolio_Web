@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import CustomButton from './Button';
-import { FaEnvelope } from 'react-icons/fa';
+import { FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
 
 const Contact = () => {
   const contactFormRef = useRef(null);
@@ -12,6 +12,17 @@ const Contact = () => {
   const [verificationCode, setVerificationCode] = useState("");
   const [pendingPayload, setPendingPayload] = useState(null);
   const [verificationToken, setVerificationToken] = useState("");
+  const [copiedField, setCopiedField] = useState("");
+
+  const copyContact = async (field, value) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopiedField(field);
+      setTimeout(() => setCopiedField(""), 1600);
+    } catch {
+      // Clipboard unavailable in restricted contexts
+    }
+  };
 
   const resetVerification = () => {
     setVerificationCode("");
@@ -142,15 +153,41 @@ const Contact = () => {
               <h2 className="text-4xl md:text-6xl font-semibold bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent leading-tight">Contact</h2>
               <p className="mt-3 text-base md:text-lg text-slate-300 max-w-xl">If you have a question, or just want to say hi - drop a message.</p>
 
-              <div className="mt-6 font-mono text-base md:text-lg text-slate-300 bg-[#06141a] border border-emerald-600/5 rounded-lg p-5 md:p-6">
-                <p className="text-emerald-300 text-base md:text-lg">$ cat contact.txt</p>
-                <p className="mt-3"><span className="text-teal-300">Phone:</span> <span className="text-white font-medium">+880 1643 372506</span></p>
-                <p className="mt-2"><span className="text-teal-300">Email:</span> <span className="text-white font-medium break-words">tahmidmuntaser80@gmail.com</span></p>
-                <p className="mt-2"><span className="text-teal-300">Location:</span> <span className="text-white font-medium">Mirpur-12, Dhaka, Bangladesh</span></p>
+              <div className="mt-6 font-mono text-sm md:text-base text-slate-300 bg-[#06141a] border border-white/10 rounded-xl p-5 md:p-6 space-y-3">
+                <p className="text-emerald-300">$ cat contact.txt</p>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <p><span className="text-teal-300">Phone:</span> <span className="text-white font-medium">+880 1643 372506</span></p>
+                  <button
+                    type="button"
+                    onClick={() => copyContact("phone", "+8801643372506")}
+                    className="inline-flex items-center gap-1.5 rounded-md border border-white/10 px-2 py-1 text-xs text-slate-400 transition-colors duration-150 hover:border-emerald-400/40 hover:text-emerald-300"
+                    aria-label="Copy phone number"
+                  >
+                    {copiedField === "phone" ? <><FaCheck className="text-emerald-400" /> copied</> : <><FaCopy /> copy</>}
+                  </button>
+                </div>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <p className="min-w-0 break-all"><span className="text-teal-300">Email:</span> <span className="text-white font-medium">tahmidmuntaser80@gmail.com</span></p>
+                  <button
+                    type="button"
+                    onClick={() => copyContact("email", "tahmidmuntaser80@gmail.com")}
+                    className="inline-flex items-center gap-1.5 rounded-md border border-white/10 px-2 py-1 text-xs text-slate-400 transition-colors duration-150 hover:border-emerald-400/40 hover:text-emerald-300"
+                    aria-label="Copy email address"
+                  >
+                    {copiedField === "email" ? <><FaCheck className="text-emerald-400" /> copied</> : <><FaCopy /> copy</>}
+                  </button>
+                </div>
+                <p><span className="text-teal-300">Location:</span> <span className="text-white font-medium">Mirpur-12, Dhaka, Bangladesh</span></p>
               </div>
 
-              <div className="mt-6 flex items-center gap-4">
-                <CustomButton href="#contact" className="px-6 py-3">Hire Me</CustomButton>
+              <div className="mt-6 flex flex-wrap items-center gap-4">
+                <CustomButton
+                  type="button"
+                  onClick={() => contactFormRef.current?.querySelector('input[name="firstName"]')?.focus()}
+                  className="px-6 py-3"
+                >
+                  Write a message
+                </CustomButton>
                 <a href="mailto:tahmidmuntaser80@gmail.com" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors"><FaEnvelope className="text-emerald-400"/> Email me</a>
               </div>
             </div>

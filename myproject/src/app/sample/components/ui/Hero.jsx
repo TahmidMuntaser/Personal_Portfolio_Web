@@ -1,177 +1,117 @@
-"use client";
-
-import React, { useState, useEffect } from 'react';
-import CustomButton from './Button';
-import Typewriter from './Typewriter';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Typewriter from "./Typewriter";
 import { FaXTwitter, FaGithub, FaLinkedin } from "react-icons/fa6";
-
-const AnimatedText = ({ text, showCursor = true, initialDelay = 0, letterDelay = 0.1 }) => {
-  return (
-    <span>
-      {text.split("").map((char, index) => (
-        <span
-          key={index}
-          style={{ animationDelay: `${initialDelay + index * letterDelay}s` }}
-          className={`inline-block opacity-0 animate-letter ${
-            char === " " ? "px-[0.2px]" : ""
-          } ${index === text.length - 1 && showCursor ? "terminal-cursor" : ""}`}
-        >
-          {char === " " ? "\u00A0" : char}
-        </span>
-      ))}
-    </span>
-  );
-};
-
-const RotatingTitle = () => {
-  const titles = [
-    "Full-Stack Software Developer",
-    "Competitive Programmer",
-    "Problem Solver",
-    "Backend Engineer",
-    "Frontend Specialist"
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % titles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const current = titles[currentIndex];
-
-  return (
-    <h1 className="text-center md:text-left text-lg sm:text-xl md:text-2xl font-semibold mt-2 pt-1 text-teal-300 leading-tight">
-      <AnimatedText text={current} showCursor={false} initialDelay={0} letterDelay={0.04} />
-    </h1>
-  );
-};
+import { FaDownload, FaArrowRight } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <section id='resume' className="flex items-center min-h-screen px-4 py-16 md:px-8 md:py-0 lg:px-20 bg-[#020D19] text-white">
-      <div className="mx-auto flex w-full max-w-7xl flex-col md:flex-row items-center justify-between">
+    <section
+      id="resume"
+      className="relative overflow-hidden bg-[#020d19] px-4 py-16 text-white md:px-8 md:py-24 lg:px-20"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px)",
+          backgroundSize: "34px 34px",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-0 h-72 w-[40rem] max-w-full -translate-x-1/2 rounded-full bg-emerald-400/10 blur-3xl"
+      />
 
-      {/* Content Section */}
-      <div className="order-2 md:order-1 max-w-2xl bg-[#020D19]/70 backdrop-blur-sm p-8 md:p-10 rounded-2xl mt-8 md:mt-0 w-full md:w-auto border border-teal-800/30 shadow-2xl">
-        
-          <h2 className="text-center md:text-left text-3xl md:text-5xl font-mono font-semibold mt-2 mb-6">
-            <div className="pt-2">
-              <AnimatedText text="Hi, I'm" showCursor={false} />
-            </div>
-            <div className="pt-2">
-              <AnimatedText text="Tahmid Muntaser" initialDelay={1} />
-            </div>
-          </h2>
-
-          <Typewriter
-            texts={[
-              "FullStack Software Developer",
-              "Competitive Programmer",
-              "Problem Solver",
-              "Backend Engineer",
-              "Frontend Specialist"
-            ]}
-          />
-          
-          <p className="text-center md:text-left text-base sm:text-lg md:text-xl mt-6 pb-6 text-white/90 leading-relaxed">
-            I am a passionate developer who loves building beautiful and functional software. Explore my work and get in touch!
+      <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div className="order-2 lg:order-1">
+          <p className="font-mono text-sm text-emerald-300">
+            <span className="text-emerald-500">visitor@portfolio:~$</span> whoami
           </p>
 
-          
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
-            
-          <a
-            href="/TAHMID_MUNTASER_SWE_CV.pdf"
-            download="TAHMID_MUNTASER_SWE_CV.pdf"
-            className="relative px-8 py-4 font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full overflow-hidden group transition-all duration-300 w-full sm:w-auto hover:shadow-lg hover:shadow-teal-500/25 hover:scale-105"
-          >
-            <span className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-800 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
-            <span className="relative z-10 flex items-center justify-center">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            Tahmid Muntaser
+          </h1>
+
+          <div className="mt-3">
+            <Typewriter
+              as="p"
+              texts={[
+                "Full-Stack Software Developer",
+                "Backend & API Engineer",
+                "Competitive Programmer",
+              ]}
+            />
+          </div>
+
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
+            I design and build reliable web applications from database to UI—focused on clean code, real-world utility, and performance.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href="/TAHMID_MUNTASER_SWE_CV.pdf"
+              download="TAHMID_MUNTASER_SWE_CV.pdf"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-[#04121b] transition-colors duration-150 hover:bg-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-200"
+            >
+              <FaDownload className="h-3.5 w-3.5" aria-hidden="true" />
               Download CV
-            </span>
-          </a>
+            </a>
 
-          {/* Social Icons */}
-            <div className="flex space-x-4">
-              
-              {/* Twitter */}
-              <a 
-                href="https://x.com/Tahmid_Muntaser" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div className="p-3 bg-transparent border-2 border-teal-600/50 rounded-full 
-                             hover:bg-gradient-to-br hover:from-teal-600 hover:to-teal-800 hover:border-transparent hover:scale-110 
-                             hover:shadow-lg hover:shadow-teal-500/25 transition-all duration-300 ease-in-out cursor-pointer">
-                  <FaXTwitter className="text-xl text-white group-hover:text-white" />
-                </div>
-              </a>
-              {/* GitHub */}
-              <a 
-                href="https://github.com/TahmidMuntaser" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div className="p-3 bg-transparent border-2 border-teal-600/50 rounded-full 
-                              hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-900 hover:border-transparent hover:scale-110 
-                              hover:shadow-lg hover:shadow-gray-500/25 transition-all duration-300 ease-in-out cursor-pointer">
-                  <FaGithub className="text-xl text-white group-hover:text-white" />
-                </div>
-              </a>
+            <Link
+              href="#works"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-slate-200 transition-colors duration-150 hover:border-emerald-400/40 hover:text-emerald-200"
+            >
+              Selected Work
+              <FaArrowRight className="h-3 w-3" aria-hidden="true" />
+            </Link>
 
-              {/* LinkedIn */}
-              <a 
-                href="https://www.linkedin.com/in/tahmid-muntaser-518929230/" 
-                target="_blank" 
+            <div className="flex items-center gap-2 sm:ml-2">
+              <a
+                href="https://github.com/TahmidMuntaser"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                aria-label="GitHub"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300 transition-colors duration-150 hover:border-emerald-400/40 hover:text-emerald-300"
               >
-                <div className="p-3 bg-transparent border-2 border-teal-600/50 rounded-full 
-                              hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-800 hover:border-transparent hover:scale-110 
-                              hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 ease-in-out cursor-pointer">
-                  <FaLinkedin className="text-xl text-white group-hover:text-white" />
-                </div>
+                <FaGithub className="text-lg" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tahmid-muntaser-518929230/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300 transition-colors duration-150 hover:border-emerald-400/40 hover:text-emerald-300"
+              >
+                <FaLinkedin className="text-lg" />
+              </a>
+              <a
+                href="https://x.com/Tahmid_Muntaser"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300 transition-colors duration-150 hover:border-emerald-400/40 hover:text-emerald-300"
+              >
+                <FaXTwitter className="text-lg" />
               </a>
             </div>
+          </div>
         </div>
 
-
-      </div>
-
-      {/* Photo Section */}
-      <div className="order-1 md:order-2 mt-0 md:mt-0 mb-10 md:mb-0 relative group">
-      
-        <div 
-          className="absolute -inset-1 rounded-2xl blur-lg opacity-50 group-hover:opacity-70 transition-opacity duration-1000"
-          style={{
-            background: 'linear-gradient(-45deg, #021618, #013c2e, #024b3f, #003d2c)',
-            backgroundSize: '400% 400%',
-            animation: 'gradientShift 4s ease infinite'
-          }}
-        ></div>
-        
-        <div className="relative">
-          <img
-            src="/tah234.png"
-            alt="Tahmid"
-            className="w-[280px] h-[320px] md:w-[350px] md:h-[400px] rounded-2xl object-cover border-4 border-teal-800 transition-transform duration-500 group-hover:scale-105 z-10 relative mx-auto"
-          />
-          
-          <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-teal-400 rounded-tl-lg z-20"></div>
-          <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-teal-400 rounded-tr-lg z-20"></div>
-          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-teal-400 rounded-bl-lg z-20"></div>
-          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-teal-400 rounded-br-lg z-20"></div>
+        <div className="order-1 mx-auto w-full max-w-xs sm:max-w-sm lg:order-2 lg:ml-auto lg:mr-0">
+          <div className="group relative aspect-[4/4.4] w-full overflow-hidden rounded-2xl border border-white/10 bg-[#081720] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+            <Image
+              src="/tah234.png"
+              alt="Tahmid Muntaser"
+              fill
+              priority
+              sizes="(max-width: 1024px) 384px, 420px"
+              className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
+            />
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );
