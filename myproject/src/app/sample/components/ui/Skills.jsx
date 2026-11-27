@@ -48,7 +48,7 @@ const Skills = ({ skills }) => {
     return (
         <section
             id="skills"
-            className="relative overflow-hidden px-3 py-14 sm:px-4 md:px-8 md:py-20 lg:px-20 scroll-mt-40 bg-[linear-gradient(180deg,_#020617_0%,_#04111c_100%)]"
+            className="relative overflow-hidden px-4 py-16 md:px-8 md:py-20 lg:px-20 scroll-mt-40 bg-[linear-gradient(180deg,_#020617_0%,_#04111c_100%)]"
         >
             <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top,_rgba(34,197,94,0.08),_transparent_32%)]"></div>
 

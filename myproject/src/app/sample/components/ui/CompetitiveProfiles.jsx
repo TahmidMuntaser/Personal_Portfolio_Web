@@ -290,7 +290,7 @@ const CompetitiveProfiles = ({ profiles = [] }) => {
         <section
             id="cp"
             aria-labelledby="cp-heading"
-            className="relative overflow-hidden bg-[#020d19] px-4 py-20 md:px-8 md:py-24 lg:px-20 scroll-mt-40"
+            className="relative overflow-hidden bg-[#020d19] px-4 py-16 md:px-8 md:py-20 lg:px-20 scroll-mt-40"
         >
             <div
                 aria-hidden="true"

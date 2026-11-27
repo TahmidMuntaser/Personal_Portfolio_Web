@@ -7,7 +7,7 @@ const Achievements = ({ achievements }) => {
     return (
         <section
             id="achievements"
-            className="relative overflow-hidden px-4 py-20 md:px-8 md:py-24 lg:px-20 scroll-mt-40 bg-[linear-gradient(180deg,_rgba(2,13,25,1)_0%,_rgba(4,18,27,1)_42%,_rgba(2,13,25,1)_100%)]"
+            className="relative overflow-hidden px-4 py-16 md:px-8 md:py-20 lg:px-20 scroll-mt-40 bg-[linear-gradient(180deg,_rgba(2,13,25,1)_0%,_rgba(4,18,27,1)_42%,_rgba(2,13,25,1)_100%)]"
         >
             <div
                 className="absolute inset-0 pointer-events-none opacity-30"
@@ -20,7 +20,7 @@ const Achievements = ({ achievements }) => {
             <div className="absolute left-[-4rem] top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl pointer-events-none" />
             <div className="absolute right-[-4rem] bottom-12 h-72 w-72 rounded-full bg-emerald-400/10 blur-3xl pointer-events-none" />
 
-            <div className="relative mx-auto max-w-5xl">
+            <div className="relative mx-auto max-w-7xl">
                 <div className="overflow-hidden rounded-[30px] border border-white/10 bg-[#07141c]/95 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur-sm">
                     <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 md:px-7">
                         <div className="flex items-center gap-2">

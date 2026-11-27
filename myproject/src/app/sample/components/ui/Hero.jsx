@@ -52,7 +52,8 @@ const RotatingTitle = () => {
 
 const Hero = () => {
   return (
-    <section id='resume' className="flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-14 pt-16 md:pt-0 pb-16 md:pb-0 bg-[#020D19] text-white">
+    <section id='resume' className="flex items-center min-h-screen px-4 py-16 md:px-8 md:py-0 lg:px-20 bg-[#020D19] text-white">
+      <div className="mx-auto flex w-full max-w-7xl flex-col md:flex-row items-center justify-between">
 
       {/* Content Section */}
       <div className="order-2 md:order-1 max-w-2xl bg-[#020D19]/70 backdrop-blur-sm p-8 md:p-10 rounded-2xl mt-8 md:mt-0 w-full md:w-auto border border-teal-800/30 shadow-2xl">
@@ -171,7 +172,7 @@ const Hero = () => {
           <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-teal-400 rounded-br-lg z-20"></div>
         </div>
       </div>
-
+      </div>
     </section>
   );
 };

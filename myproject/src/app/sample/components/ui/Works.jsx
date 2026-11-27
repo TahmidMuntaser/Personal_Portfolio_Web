@@ -18,7 +18,7 @@ const Works = ({ projects = [] }) => {
     return (
         <section
             id="works"
-            className="relative scroll-mt-40 overflow-hidden bg-[#020d19] px-4 py-20 md:px-8 md:py-24 lg:px-20"
+            className="relative scroll-mt-40 overflow-hidden bg-[#020d19] px-4 py-16 md:px-8 md:py-20 lg:px-20"
         >
             {/* subtle grid + glow, same vibe as the rest of the site */}
             <div

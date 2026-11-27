@@ -29,7 +29,7 @@ const quickLinks = [
 
 const Footer = () => {
     return (
-        <footer className="relative overflow-hidden px-6 pb-10 pt-20 text-gray-300 md:px-16 lg:px-20">
+        <footer className="relative overflow-hidden px-4 pb-10 pt-16 text-gray-300 md:px-8 md:pt-20 lg:px-20">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent"></div>
             <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.08),_transparent_30%)]"></div>
 

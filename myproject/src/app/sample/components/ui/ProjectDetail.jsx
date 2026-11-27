@@ -151,7 +151,7 @@ const ProjectDetail = ({ project }) => {
 
     return (
         <>
-            <section className="relative overflow-hidden bg-[#020d19] px-2 py-16 sm:px-4 md:px-6 md:py-20 lg:px-8">
+            <section className="relative overflow-hidden bg-[#020d19] px-4 py-16 md:px-8 md:py-20 lg:px-20">
                 {/* same grid + glow as Works / Education */}
                 <div
                     className="pointer-events-none absolute inset-0 opacity-30"

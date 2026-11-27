@@ -40,7 +40,7 @@ const Services = () => {
     return (
         <section
             id='services'
-            className="relative overflow-hidden px-4 py-12 md:px-8 md:py-16 lg:px-20 scroll-mt-40 bg-[linear-gradient(180deg,_rgba(2,13,25,1)_0%,_rgba(4,19,27,1)_35%,_rgba(2,13,25,1)_100%)]"
+            className="relative overflow-hidden px-4 py-16 md:px-8 md:py-20 lg:px-20 scroll-mt-40 bg-[linear-gradient(180deg,_rgba(2,13,25,1)_0%,_rgba(4,19,27,1)_35%,_rgba(2,13,25,1)_100%)]"
         >
             <div
                 className="absolute inset-0 pointer-events-none opacity-40"

@@ -125,7 +125,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-6 md:px-14 lg:px-20 scroll-mt-32 bg-[#020D19] text-white">
+    <section id="contact" className="px-4 py-16 md:px-8 md:py-20 lg:px-20 scroll-mt-32 bg-[#020D19] text-white">
       <div className="max-w-7xl mx-auto">
         <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#07141c]/90 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm">
           <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 md:px-8">
